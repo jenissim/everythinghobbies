@@ -1,53 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Join — Everything Hobbies</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body class="join-page">
+
+
 <header class="site-header solid">
+
   <a class="wordmark" href="index.html">
     everything<span>hobbies</span>
   </a>
-  <button class="menu-toggle" aria-label="Open menu">
-    <span></span>
-    <span></span>
-  </button>
+
   <nav class="nav">
+
     <a href="explore.html">Explore</a>
+
     <a href="books.html">Book Club</a>
+
     <a href="journal.html">Journal</a>
+
     <a href="about.html">About</a>
-    <a class="nav-cta active-cta" href="join.html">Join us</a>
+
+    <a class="nav-cta active-cta" href="join.html">
+      Join us
+    </a>
+
   </nav>
+
 </header>
+
+
+
 <main class="join-main">
+
   <section class="join-card">
+
+
     <div class="join-copy">
-      <p class="eyebrow dark">You're invited</p>
+
+      <p class="eyebrow dark">
+        You're invited
+      </p>
+
       <h1>
         Come for the hobbies.<br>
         <em>Stay for the conversation.</em>
       </h1>
+
       <p>
-        Leave your email and we'll let you know when Everything Hobbies officially opens.
+        Join the Everything Hobbies community.
+        Get updates, book club news, new journal entries
+        and everything we're building.
       </p>
+
     </div>
-    <!-- NETLIFY SIGN-UP FORM -->
+
+
+
+    <!-- EVERYTHING HOBBIES SIGN-UP FORM -->
+
     <form
-      id="signup-form"
       name="everything-hobbies-signup"
       method="POST"
       data-netlify="true"
       netlify
     >
-      <input type="hidden" name="form-name" value="everything-hobbies-signup">
-      <label for="name">Your name</label>
+
+      <!-- Required by Netlify -->
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="everything-hobbies-signup"
+      >
+
+
+      <!-- NAME -->
+
+      <label for="name">
+        Your name
+      </label>
+
       <input
         id="name"
         name="name"
@@ -55,7 +105,14 @@
         placeholder="What should we call you?"
         required
       >
-      <label for="email">Email address</label>
+
+
+      <!-- EMAIL -->
+
+      <label for="email">
+        Email address
+      </label>
+
       <input
         id="email"
         name="email"
@@ -63,55 +120,125 @@
         placeholder="you@example.com"
         required
       >
-      <label>What are you into?</label>
+
+
+      <!-- HOBBIES -->
+
+      <label>
+        What are you into?
+      </label>
+
+
       <div class="checks">
+
         <label>
-          <input type="checkbox" name="hobby" value="Reading">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Reading"
+          >
           Reading
         </label>
+
+
         <label>
-          <input type="checkbox" name="hobby" value="Writing">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Writing"
+          >
           Writing
         </label>
+
+
         <label>
-          <input type="checkbox" name="hobby" value="Fashion">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Fashion"
+          >
           Fashion
         </label>
+
+
         <label>
-          <input type="checkbox" name="hobby" value="Music">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Music"
+          >
           Music
         </label>
+
+
         <label>
-          <input type="checkbox" name="hobby" value="Cooking">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Cooking"
+          >
           Cooking
         </label>
+
+
         <label>
-          <input type="checkbox" name="hobby" value="Other">
+          <input
+            type="checkbox"
+            name="hobby"
+            value="Other"
+          >
           Other
         </label>
+
       </div>
-      <button class="button button-dark full" type="submit">
+
+
+      <!-- SUBMIT -->
+
+      <button
+        class="button button-dark full"
+        type="submit"
+      >
         I'm in →
       </button>
+
+
       <p class="form-note">
         No spam. Just launch news and good things.
       </p>
-      <p id="form-message" class="form-message"></p>
+
     </form>
+
   </section>
+
 </main>
+
+
+
 <footer class="footer">
+
   <a class="wordmark" href="index.html">
     everything<span>hobbies</span>
   </a>
+
   <p>
     Everything you love. Worth talking about.
   </p>
+
   <div>
-    <a href="about.html">About</a>
-    <a href="index.html">Home</a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="index.html">
+      Home
+    </a>
+
   </div>
+
 </footer>
-<script src="script.js"></script>
+
+
 </body>
 </html>
