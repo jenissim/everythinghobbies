@@ -9,10 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
 
@@ -318,36 +315,6 @@
       text-align: center;
       font-size: 11px;
       color: #858078;
-    }
-
-
-    /* =========================================
-       SUCCESS MESSAGE
-    ========================================= */
-
-    .success-message {
-      display: none;
-      padding: 30px;
-      border: 1px solid #171717;
-      text-align: center;
-    }
-
-    .success-message.show {
-      display: block;
-    }
-
-    .success-message h3 {
-      margin: 0 0 12px;
-      font-family: "DM Serif Display", serif;
-      font-size: 34px;
-      font-weight: 400;
-    }
-
-    .success-message p {
-      margin: 0;
-      color: #77736c;
-      font-size: 14px;
-      line-height: 1.6;
     }
 
 
@@ -743,26 +710,6 @@
       </p>
 
 
-      <!-- SUCCESS -->
-
-      <div
-        class="success-message"
-        id="success-message"
-      >
-
-        <h3>
-          You're in. ✨
-        </h3>
-
-        <p>
-          Welcome to Everything Hobbies.
-          Keep an eye on your inbox — we'll be in touch
-          with launch news and good things.
-        </p>
-
-      </div>
-
-
     </form>
 
   </section>
@@ -800,17 +747,13 @@
 
 
 <!-- =========================================
-     BREVO / NETLIFY SIGNUP CONNECTION
+     NETLIFY → BREVO CONNECTION
 ========================================= -->
 
 <script>
 
   const signupForm = document.getElementById(
     "everything-hobbies-signup"
-  );
-
-  const successMessage = document.getElementById(
-    "success-message"
   );
 
 
@@ -874,18 +817,10 @@
         }
 
 
-        signupForm
-          .querySelectorAll(".field, .hobbies, .submit-button, .form-note")
-          .forEach(function (element) {
+        /* SUCCESS */
 
-            element.style.display = "none";
-
-          });
-
-
-        successMessage.classList.add(
-          "show"
-        );
+        window.location.href =
+          "join-success.html";
 
 
       } catch (error) {
@@ -898,7 +833,8 @@
 
         button.disabled = false;
 
-        button.textContent = "I'M IN →";
+        button.textContent =
+          "I'M IN →";
 
 
         alert(
