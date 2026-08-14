@@ -13,10 +13,6 @@
 
   <style>
 
-    /* =========================================
-       EVERYTHING HOBBIES — JOIN PAGE
-    ========================================= */
-
     * {
       box-sizing: border-box;
     }
@@ -32,10 +28,7 @@
       font-family: "Inter", sans-serif;
     }
 
-
-    /* =========================================
-       HEADER
-    ========================================= */
+    /* HEADER */
 
     .join-header {
       width: 100%;
@@ -73,10 +66,7 @@
       text-decoration: underline;
     }
 
-
-    /* =========================================
-       MAIN
-    ========================================= */
+    /* MAIN */
 
     .join-wrapper {
       width: 100%;
@@ -85,10 +75,7 @@
       padding: 70px 6vw 110px;
     }
 
-
-    /* =========================================
-       INTRO
-    ========================================= */
+    /* INTRO */
 
     .intro {
       max-width: 900px;
@@ -126,10 +113,7 @@
       color: #55524c;
     }
 
-
-    /* =========================================
-       SIGNUP AREA
-    ========================================= */
+    /* SIGNUP AREA */
 
     .signup-area {
       display: grid;
@@ -167,10 +151,7 @@
       color: #77736c;
     }
 
-
-    /* =========================================
-       FORM
-    ========================================= */
+    /* FORM */
 
     .signup-form {
       padding: 50px 0 50px 55px;
@@ -217,10 +198,7 @@
       border-width: 2px;
     }
 
-
-    /* =========================================
-       HOBBIES
-    ========================================= */
+    /* HOBBIES */
 
     .hobbies {
       margin-bottom: 38px;
@@ -271,10 +249,7 @@
       color: #f4efe5;
     }
 
-
-    /* =========================================
-       BUTTON
-    ========================================= */
+    /* BUTTON */
 
     .submit-button {
       width: 100%;
@@ -317,10 +292,7 @@
       color: #858078;
     }
 
-
-    /* =========================================
-       FOOTER
-    ========================================= */
+    /* FOOTER */
 
     .join-footer {
       background: #171717;
@@ -351,10 +323,7 @@
       font-size: 12px;
     }
 
-
-    /* =========================================
-       MOBILE
-    ========================================= */
+    /* MOBILE */
 
     @media (max-width: 750px) {
 
@@ -394,7 +363,6 @@
         line-height: 1.6;
       }
 
-
       .signup-area {
         display: block;
       }
@@ -413,11 +381,9 @@
         max-width: 100%;
       }
 
-
       .signup-form {
         padding: 35px 0 40px;
       }
-
 
       .field {
         margin-bottom: 28px;
@@ -428,7 +394,6 @@
         height: 58px;
       }
 
-
       .hobby-options {
         gap: 8px;
       }
@@ -438,11 +403,9 @@
         font-size: 11px;
       }
 
-
       .submit-button {
         min-height: 60px;
       }
-
 
       .join-footer {
         padding: 55px 20px;
@@ -453,11 +416,7 @@
   </style>
 </head>
 
-
 <body>
-
-
-<!-- HEADER -->
 
 <header class="join-header">
 
@@ -471,14 +430,7 @@
 
 </header>
 
-
-
-<!-- MAIN -->
-
 <main class="join-wrapper">
-
-
-  <!-- INTRO -->
 
   <section class="intro">
 
@@ -499,14 +451,7 @@
 
   </section>
 
-
-
-  <!-- SIGNUP -->
-
   <section class="signup-area">
-
-
-    <!-- SIDE -->
 
     <div class="signup-side">
 
@@ -525,23 +470,10 @@
 
     </div>
 
-
-
-    <!-- FORM -->
-
     <form
       class="signup-form"
       id="everything-hobbies-signup"
     >
-
-      <input
-        type="hidden"
-        name="form-name"
-        value="everything-hobbies-signup"
-      >
-
-
-      <!-- NAME -->
 
       <div class="field">
 
@@ -559,10 +491,6 @@
 
       </div>
 
-
-
-      <!-- EMAIL -->
-
       <div class="field">
 
         <label for="email">
@@ -579,123 +507,47 @@
 
       </div>
 
-
-
-      <!-- HOBBIES -->
-
       <div class="hobbies">
 
         <span class="hobby-title">
           What are you into?
         </span>
 
-
         <div class="hobby-options">
 
-
           <div class="hobby-option">
-
-            <input
-              id="reading"
-              type="checkbox"
-              name="hobby"
-              value="Reading"
-            >
-
-            <label for="reading">
-              Reading
-            </label>
-
+            <input id="reading" type="checkbox" name="hobby" value="Reading">
+            <label for="reading">Reading</label>
           </div>
 
-
           <div class="hobby-option">
-
-            <input
-              id="writing"
-              type="checkbox"
-              name="hobby"
-              value="Writing"
-            >
-
-            <label for="writing">
-              Writing
-            </label>
-
+            <input id="writing" type="checkbox" name="hobby" value="Writing">
+            <label for="writing">Writing</label>
           </div>
 
-
           <div class="hobby-option">
-
-            <input
-              id="fashion"
-              type="checkbox"
-              name="hobby"
-              value="Fashion"
-            >
-
-            <label for="fashion">
-              Fashion
-            </label>
-
+            <input id="fashion" type="checkbox" name="hobby" value="Fashion">
+            <label for="fashion">Fashion</label>
           </div>
 
-
           <div class="hobby-option">
-
-            <input
-              id="music"
-              type="checkbox"
-              name="hobby"
-              value="Music"
-            >
-
-            <label for="music">
-              Music
-            </label>
-
+            <input id="music" type="checkbox" name="hobby" value="Music">
+            <label for="music">Music</label>
           </div>
 
-
           <div class="hobby-option">
-
-            <input
-              id="cooking"
-              type="checkbox"
-              name="hobby"
-              value="Cooking"
-            >
-
-            <label for="cooking">
-              Cooking
-            </label>
-
+            <input id="cooking" type="checkbox" name="hobby" value="Cooking">
+            <label for="cooking">Cooking</label>
           </div>
 
-
           <div class="hobby-option">
-
-            <input
-              id="other"
-              type="checkbox"
-              name="hobby"
-              value="Other"
-            >
-
-            <label for="other">
-              Other
-            </label>
-
+            <input id="other" type="checkbox" name="hobby" value="Other">
+            <label for="other">Other</label>
           </div>
-
 
         </div>
 
       </div>
-
-
-
-      <!-- SUBMIT -->
 
       <button
         class="submit-button"
@@ -704,21 +556,15 @@
         I'm in →
       </button>
 
-
       <p class="form-note">
         No spam. Just launch news and good things.
       </p>
-
 
     </form>
 
   </section>
 
 </main>
-
-
-
-<!-- FOOTER -->
 
 <footer class="join-footer">
 
@@ -732,23 +578,13 @@
 
   <div class="footer-links">
 
-    <a href="about.html">
-      About
-    </a>
+    <a href="about.html">About</a>
 
-    <a href="index.html">
-      Home
-    </a>
+    <a href="index.html">Home</a>
 
   </div>
 
 </footer>
-
-
-
-<!-- =========================================
-     NETLIFY → BREVO CONNECTION
-========================================= -->
 
 <script>
 
@@ -756,46 +592,32 @@
     "everything-hobbies-signup"
   );
 
-
   signupForm.addEventListener(
     "submit",
     async function (event) {
 
       event.preventDefault();
 
-
       const button = signupForm.querySelector(
         ".submit-button"
       );
 
-
       button.disabled = true;
-
       button.textContent = "JOINING...";
 
-
-      const formData = new FormData(
-        signupForm
-      );
-
+      const formData = new FormData(signupForm);
 
       const data = {
-
         name: formData.get("name"),
-
         email: formData.get("email"),
-
         hobby: formData.getAll("hobby")
-
       };
-
 
       try {
 
         const response = await fetch(
           "/.netlify/functions/signup",
           {
-
             method: "POST",
 
             headers: {
@@ -803,42 +625,34 @@
             },
 
             body: JSON.stringify(data)
-
           }
         );
 
+        const responseText = await response.text();
 
         if (!response.ok) {
 
           throw new Error(
-            "Signup failed"
+            "Server returned " +
+            response.status +
+            ": " +
+            responseText
           );
 
         }
 
-
-        /* SUCCESS */
-
-        window.location.href =
-          "join-success.html";
-
+        window.location.href = "join-success.html";
 
       } catch (error) {
 
-        console.error(
-          "Signup error:",
-          error
-        );
-
+        console.error("SIGNUP ERROR:", error);
 
         button.disabled = false;
-
-        button.textContent =
-          "I'M IN →";
-
+        button.textContent = "I'M IN →";
 
         alert(
-          "Something went wrong. Please try again."
+          "Signup error:\n\n" +
+          error.message
         );
 
       }
@@ -847,7 +661,6 @@
   );
 
 </script>
-
 
 </body>
 </html>
