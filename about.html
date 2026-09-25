@@ -1,20 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="About Everything Hobbies — a space for curiosity, conversation and all the things worth being interested in."
+  >
   <title>About — Everything Hobbies</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 <body>
-<header class="site-header solid"><a class="wordmark" href="index.html">everything<span>hobbies</span></a><button class="menu-toggle" aria-label="Open menu"><span></span><span></span></button><nav class="nav"><a href="explore.html">Explore</a><a href="books.html">Book Club</a><a href="journal.html">Journal</a><a class="active" href="about.html">About</a><a class="nav-cta" href="join.html">Join us</a></nav></header>
+<!-- =====================================================
+     HEADER
+===================================================== -->
+<header class="site-header solid">
+  <a
+    class="wordmark"
+    href="index.html"
+  >
+    everything <span>hobbies</span>
+  </a>
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+  </button>
+  <nav
+    class="nav"
+    id="nav"
+  >
+    <a href="index.html#bookclub">
+      Book Club
+    </a>
+    <a href="journal.html">
+      Journal
+    </a>
+    <a href="index.html#coming-soon">
+      Coming Soon
+    </a>
+    <a
+      class="active"
+      href="about.html"
+    >
+      About
+    </a>
+    <a
+      class="nav-cta"
+      href="join.html"
+    >
+      Join us
+    </a>
+  </nav>
+</header>
 <main>
-<section class="about-hero"><p class="eyebrow dark">About Everything Hobbies</p><h1>A space for all the things that make you <em>you.</em></h1></section>
-<section class="section about-copy"><p class="big-statement">We wanted a place where hobbies don't have to be productive, impressive, or profitable.</p><div class="two-col"><p>Maybe you read three books a month. Maybe you have not finished a book in two years but still love walking into a bookshop. Maybe you cook every day, collect playlists, save outfits you will never wear, write at 2am, or want to learn pottery next Tuesday.</p><p>That counts.</p></div></section>
-<section class="manifesto"><div><p class="eyebrow">Our only rule</p><h2>Be curious.<br>Be respectful.<br>Have fun.</h2></div><p>Everything Hobbies is somewhere between a digital magazine, a community noticeboard and the group chat where everyone keeps sending recommendations.</p></section>
-<section class="section about-end"><h2>Something for everyone.<br><em>Especially you.</em></h2><a class="button button-dark" href="join.html">Come along</a></section>
+<!-- =====================================================
+     ABOUT HERO
+===================================================== -->
+<section class="about-hero">
+  <div class="about-hero-inner">
+    <p class="eyebrow dark">
+      About Everything Hobbies
+    </p>
+    <h1>
+      A space for all<br>
+      the things that<br>
+      make you <em>you.</em>
+    </h1>
+    <div class="about-hero-bottom">
+      <p>
+        For the things you love,
+        the things you're curious about,
+        and the things you haven't tried yet.
+      </p>
+      <span>
+        ↓
+      </span>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     THE IDEA
+===================================================== -->
+<section class="about-idea section">
+  <div class="about-label">
+    <p class="eyebrow dark">
+      The idea
+    </p>
+  </div>
+  <div class="about-idea-content">
+    <h2>
+      Hobbies don't<br>
+      have to <em>mean</em><br>
+      anything.
+    </h2>
+    <p class="about-lead">
+      We wanted a place where the things you enjoy
+      don't have to be productive, impressive,
+      profitable or explainable.
+    </p>
+    <p class="about-body">
+      Maybe you read three books a month.
+      Maybe you haven't finished a book in two years
+      but still love walking into a bookshop.
+      Maybe you cook every day, collect playlists,
+      save outfits you'll never wear, write at 2am,
+      or decide you want to learn pottery next Tuesday.
+    </p>
+    <p class="about-body">
+      That counts.
+    </p>
+  </div>
+</section>
+<!-- =====================================================
+     MANIFESTO
+===================================================== -->
+<section class="about-manifesto">
+  <div class="about-manifesto-inner">
+    <div class="manifesto-heading">
+      <p class="eyebrow">
+        Our only rule
+      </p>
+      <h2>
+        Be curious.<br>
+        Be respectful.<br>
+        <em>Have fun.</em>
+      </h2>
+    </div>
+    <div class="manifesto-copy">
+      <p>
+        That's really it.
+      </p>
+      <p>
+        Everything Hobbies is somewhere between
+        a digital magazine, a community noticeboard
+        and the group chat where everyone keeps
+        sending recommendations.
+      </p>
+      <p>
+        There are no experts required here.
+        No perfect taste. No right way to enjoy something.
+        Just people finding things they like
+        and talking about them.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     WHAT WE TALK ABOUT
+===================================================== -->
+<section class="about-interests section">
+  <div class="about-interests-heading">
+    <p class="eyebrow dark">
+      Around here
+    </p>
+    <h2>
+      A little bit<br>
+      of <em>everything.</em>
+    </h2>
+  </div>
+  <div class="interest-list">
+    <a
+      href="index.html#bookclub"
+      class="interest-item"
+    >
+      <span class="interest-number">
+        01
+      </span>
+      <span class="interest-name">
+        Books
+      </span>
+      <span class="interest-description">
+        Stories, reading lists & opinions.
+      </span>
+      <span class="interest-arrow">
+        ↗
+      </span>
+    </a>
+    <a
+      href="journal.html"
+      class="interest-item"
+    >
+      <span class="interest-number">
+        02
+      </span>
+      <span class="interest-name">
+        Culture
+      </span>
+      <span class="interest-description">
+        The things shaping what we notice.
+      </span>
+      <span class="interest-arrow">
+        ↗
+      </span>
+    </a>
+    <a
+      href="journal.html"
+      class="interest-item"
+    >
+      <span class="interest-number">
+        03
+      </span>
+      <span class="interest-name">
+        Music
+      </span>
+      <span class="interest-description">
+        Songs, albums & the memories attached to them.
+      </span>
+      <span class="interest-arrow">
+        ↗
+      </span>
+    </a>
+    <a
+      href="journal.html"
+      class="interest-item"
+    >
+      <span class="interest-number">
+        04
+      </span>
+      <span class="interest-name">
+        Film & TV
+      </span>
+      <span class="interest-description">
+        What we're watching and what stays with us.
+      </span>
+      <span class="interest-arrow">
+        ↗
+      </span>
+    </a>
+    <a
+      href="journal.html"
+      class="interest-item"
+    >
+      <span class="interest-number">
+        05
+      </span>
+      <span class="interest-name">
+        Life & Ideas
+      </span>
+      <span class="interest-description">
+        Thoughts, observations & everyday rabbit holes.
+      </span>
+      <span class="interest-arrow">
+        ↗
+      </span>
+    </a>
+  </div>
+</section>
+<!-- =====================================================
+     COMMUNITY
+===================================================== -->
+<section class="about-community">
+  <div class="about-community-inner">
+    <p class="eyebrow">
+      This is your invitation
+    </p>
+    <h2>
+      Bring your<br>
+      <em>interests.</em>
+    </h2>
+    <div class="about-community-copy">
+      <p>
+        You don't need to be an expert.
+        You don't need to have a shelf full of books,
+        a record collection or a perfectly curated
+        Pinterest board.
+      </p>
+      <p>
+        You just need to be interested in something.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     WHAT'S HERE
+===================================================== -->
+<section class="about-platform section">
+  <div class="about-platform-heading">
+    <p class="eyebrow dark">
+      What you'll find here
+    </p>
+    <h2>
+      We're building<br>
+      <em>something to stay for.</em>
+    </h2>
+  </div>
+  <div class="platform-list">
+    <div class="platform-item">
+      <span>
+        01
+      </span>
+      <div>
+        <h3>
+          The Book Club
+        </h3>
+        <p>
+          One book. One month.
+          A whole lot of opinions.
+        </p>
+      </div>
+    </div>
+    <div class="platform-item">
+      <span>
+        02
+      </span>
+      <div>
+        <h3>
+          The Journal
+        </h3>
+        <p>
+          Essays, recommendations,
+          observations and things worth talking about.
+        </p>
+      </div>
+    </div>
+    <div class="platform-item">
+      <span>
+        03
+      </span>
+      <div>
+        <h3>
+          More hobbies
+        </h3>
+        <p>
+          We're only getting started.
+          There is plenty more to explore.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     FINAL STATEMENT
+===================================================== -->
+<section class="about-final">
+  <div class="about-final-inner">
+    <p class="eyebrow">
+      Everything Hobbies
+    </p>
+    <h2>
+      Everything you love.<br>
+      <em>Worth talking about.</em>
+    </h2>
+    <a
+      href="join.html"
+      class="button button-light"
+    >
+      Come along
+      <span>→</span>
+    </a>
+  </div>
+</section>
 </main>
-<footer class="footer"><a class="wordmark" href="index.html">everything<span>hobbies</span></a><p>Everything you love. Worth talking about.</p><div><a href="about.html">About</a><a href="join.html">Join</a></div></footer>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer class="footer">
+  <a
+    class="wordmark"
+    href="index.html"
+  >
+    everything <span>hobbies</span>
+  </a>
+  <p>
+    Everything you love.<br>
+    Worth talking about.
+  </p>
+  <div class="footer-links">
+    <a href="index.html#bookclub">
+      Book Club
+    </a>
+    <a href="journal.html">
+      Journal
+    </a>
+    <a href="index.html#coming-soon">
+      Coming soon
+    </a>
+    <a href="about.html">
+      About
+    </a>
+    <a href="join.html">
+      Join
+    </a>
+  </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
