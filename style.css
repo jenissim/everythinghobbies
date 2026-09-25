@@ -1,1082 +1,1297 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  font-family: Inter, Arial, sans-serif;
-  background: #f5efe4;
-  color: #171717;
-  line-height: 1.5;
+font-family: Inter, Arial, sans-serif;
+background: #f5efe4;
+color: #171717;
+line-height: 1.5;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+color: inherit;
+text-decoration: none;
 }
 
 button {
-  font-family: inherit;
+font-family: inherit;
 }
 
-
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 .site-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 20;
 
-  padding: 25px 6vw;
+padding: 25px 6vw;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 
-  color: #171717;
+color: #171717;
 }
 
 .wordmark {
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
+font-size: 21px;
+font-weight: 800;
+letter-spacing: -1.5px;
 }
 
 .wordmark span {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  margin-left: 2px;
+font-family: “DM Serif Display”, serif;
+font-weight: 400;
+margin-left: 2px;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+display: flex;
+align-items: center;
+gap: 28px;
 
-  font-size: 12px;
-  font-weight: 700;
+font-size: 12px;
+font-weight: 700;
 }
 
 .nav a {
-  opacity: .65;
-  transition: .2s;
+opacity: .65;
+transition: .2s;
 }
 
 .nav a:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .nav-cta {
-  padding: 10px 17px;
-  border: 1px solid #171717;
-  border-radius: 999px;
+padding: 10px 17px;
 
-  opacity: 1 !important;
+border: 1px solid #171717;
+border-radius: 999px;
+
+opacity: 1 !important;
 }
 
+/* =========================
+MOBILE MENU
+========================= */
+
 .menu-toggle {
-  display: none;
+display: none;
 
-  width: 34px;
-  height: 30px;
+width: 34px;
+height: 30px;
 
-  border: 0;
-  background: transparent;
+border: 0;
+background: transparent;
 
-  cursor: pointer;
+cursor: pointer;
 }
 
 .menu-toggle span {
-  display: block;
+display: block;
 
-  width: 25px;
-  height: 2px;
+width: 25px;
+height: 2px;
 
-  background: #171717;
+background: #171717;
 
-  margin: 6px 0;
+margin: 6px 0;
 }
 
-
 /* =========================
-   GENERAL
+GENERAL
 ========================= */
 
 .section {
-  padding: 120px 8vw;
+padding: 120px 8vw;
 }
 
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
+text-transform: uppercase;
+letter-spacing: 2.5px;
 
-  font-size: 11px;
-  font-weight: 800;
+font-size: 11px;
+font-weight: 800;
 
-  margin-bottom: 25px;
+margin-bottom: 25px;
 }
 
 .eyebrow.dark {
-  color: #777;
+color: #777;
 }
 
-
 /* =========================
-   BUTTONS
+BUTTONS
 ========================= */
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
+display: inline-flex;
 
-  padding: 17px 28px;
+align-items: center;
+justify-content: center;
 
-  border-radius: 999px;
+gap: 25px;
 
-  font-size: 14px;
-  font-weight: 800;
+padding: 17px 28px;
 
-  transition: .2s;
+border-radius: 999px;
+
+font-size: 14px;
+font-weight: 800;
+
+transition: .2s;
 }
 
 .button:hover {
-  transform: translateY(-3px);
+transform: translateY(-3px);
 }
 
 .button-orange {
-  background: #ffab55;
-  color: #171717;
+background: #ffab55;
+color: #171717;
 }
 
 .button-light {
-  background: #f5efe4;
-  color: #171717;
+background: #f5efe4;
+color: #171717;
 }
 
+/* =========================
+TEXT LINK
+========================= */
+
+.text-link {
+display: inline-block;
+
+margin-top: 30px;
+
+font-size: 13px;
+font-weight: 800;
+
+border-bottom: 1px solid #171717;
+
+padding-bottom: 5px;
+
+transition: .2s;
+}
+
+.text-link:hover {
+opacity: .55;
+}
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero {
-  min-height: 100vh;
+min-height: 100vh;
 
-  padding: 150px 8vw 100px;
+padding: 150px 8vw 100px;
 
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
 
 .hero-content {
-  max-width: 1000px;
+max-width: 1000px;
 }
 
 .hero h1 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(75px, 11vw, 150px);
+font-size: clamp(75px, 11vw, 150px);
 
-  line-height: .78;
+line-height: .78;
 
-  letter-spacing: -6px;
+letter-spacing: -6px;
 
-  font-weight: 400;
+font-weight: 400;
 
-  margin-bottom: 50px;
+margin-bottom: 50px;
 }
 
 .hero h1 strong {
-  font-family: Inter, sans-serif;
+font-family: Inter, sans-serif;
 
-  font-size: .72em;
+font-size: .72em;
 
-  font-weight: 800;
+font-weight: 800;
 
-  letter-spacing: -7px;
+letter-spacing: -7px;
 }
 
 .hero-copy {
-  font-size: 21px;
+font-size: 21px;
 
-  margin-bottom: 30px;
+margin-bottom: 30px;
 }
 
-
 /* =========================
-   BOOK CLUB INTRO
+BOOK CLUB INTRO
 ========================= */
 
 .book-intro {
-  display: grid;
+display: grid;
 
-  grid-template-columns: .5fr 1.5fr;
+grid-template-columns: .5fr 1.5fr;
 
-  gap: 8vw;
+gap: 8vw;
 
-  align-items: start;
+align-items: start;
 
-  padding-top: 80px;
-  padding-bottom: 140px;
+padding-top: 80px;
+padding-bottom: 140px;
 }
 
 .intro-content {
-  max-width: 850px;
+max-width: 850px;
 }
 
 .intro-content h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(55px, 7vw, 100px);
+font-size: clamp(55px, 7vw, 100px);
 
-  font-weight: 400;
+font-weight: 400;
 
-  line-height: .9;
+line-height: .9;
 
-  letter-spacing: -4px;
+letter-spacing: -4px;
 
-  margin-bottom: 35px;
+margin-bottom: 35px;
 }
 
 .intro-lead {
-  font-size: 25px;
+font-size: 25px;
 
-  max-width: 650px;
+max-width: 650px;
 
-  margin-bottom: 25px;
+margin-bottom: 25px;
 }
 
 .intro-text {
-  max-width: 650px;
+max-width: 650px;
 
-  font-size: 17px;
+font-size: 17px;
 
-  line-height: 1.7;
+line-height: 1.7;
 
-  color: #555;
+color: #555;
 }
 
-
 /* =========================
-   STEP ONE / GENRE VOTE
+STEP ONE / GENRE VOTE
 ========================= */
 
 .vote-section {
-  background: #8f171d;
+background: #8f171d;
 
-  color: #fff;
+color: #fff;
 
-  padding: 130px 8vw;
+padding: 130px 8vw;
 }
 
 .vote-inner {
-  max-width: 1150px;
+max-width: 1150px;
 
-  margin: auto;
+margin: auto;
 }
 
 .vote-heading {
-  max-width: 1000px;
+max-width: 1000px;
 
-  margin-bottom: 75px;
+margin-bottom: 75px;
 }
 
 .vote-heading .eyebrow {
-  color: #ffab55;
+color: #ffab55;
 }
 
 .vote-heading h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(65px, 9vw, 120px);
+font-size: clamp(65px, 9vw, 120px);
 
-  line-height: .82;
+line-height: .82;
 
-  font-weight: 400;
+font-weight: 400;
 
-  letter-spacing: -5px;
+letter-spacing: -5px;
 }
 
 .vote-heading h2 em {
-  font-style: italic;
+font-style: italic;
 }
 
 .heading-line {
-  width: 80px;
+width: 80px;
 
-  height: 1px;
+height: 1px;
 
-  background: rgba(255,255,255,.45);
+background: rgba(255,255,255,.45);
 
-  margin: 40px 0 30px;
+margin: 40px 0 30px;
 }
 
 .vote-intro {
-  font-size: 17px;
+font-size: 17px;
 
-  line-height: 1.6;
+line-height: 1.6;
 
-  color: rgba(255,255,255,.8);
+color: rgba(255,255,255,.8);
 }
 
 .vote-intro em {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: 19px;
+font-size: 19px;
 }
 
-
-/* GENRE LIST */
+/* =========================
+GENRE LIST
+========================= */
 
 .genre-list {
-  border-top: 1px solid rgba(255,255,255,.35);
+border-top: 1px solid rgba(255,255,255,.35);
 }
 
 .genre-item {
-  width: 100%;
+width: 100%;
 
-  min-height: 105px;
+min-height: 105px;
 
-  display: grid;
+display: grid;
 
-  grid-template-columns: 65px 1fr 1fr 45px;
+grid-template-columns: 65px 1fr 1fr 45px;
 
-  align-items: center;
+align-items: center;
 
-  gap: 20px;
+gap: 20px;
 
-  padding: 20px 0;
+padding: 20px 0;
 
-  border: 0;
+border: 0;
 
-  border-bottom: 1px solid rgba(255,255,255,.35);
+border-bottom: 1px solid rgba(255,255,255,.35);
 
-  background: transparent;
+background: transparent;
 
-  color: #fff;
+color: #fff;
 
-  text-align: left;
+text-align: left;
 
-  cursor: pointer;
+cursor: pointer;
 
-  transition:
-    background .25s ease,
-    color .25s ease,
-    padding .25s ease;
+transition:
+background .25s ease,
+color .25s ease,
+padding .25s ease;
 }
 
 .genre-number {
-  font-size: 11px;
+font-size: 11px;
 
-  font-weight: 800;
+font-weight: 800;
 
-  letter-spacing: 1px;
+letter-spacing: 1px;
 
-  color: #ffab55;
+color: #ffab55;
 }
 
 .genre-name {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(30px, 4vw, 50px);
+font-size: clamp(30px, 4vw, 50px);
 
-  line-height: 1;
+line-height: 1;
 
-  font-weight: 400;
+font-weight: 400;
 }
 
 .genre-description {
-  font-size: 12px;
+font-size: 12px;
 
-  line-height: 1.4;
+line-height: 1.4;
 
-  opacity: .65;
+opacity: .65;
 
-  max-width: 270px;
+max-width: 270px;
 }
 
 .genre-arrow {
-  font-size: 23px;
+font-size: 23px;
 
-  text-align: right;
+text-align: right;
 
-  opacity: .6;
+opacity: .6;
 
-  transition: .2s;
+transition: .2s;
 }
 
-
-/* HOVER */
+/* =========================
+GENRE HOVER
+========================= */
 
 .genre-item:hover {
-  background: #ffab55;
+background: #ffab55;
 
-  color: #171717;
+color: #171717;
 
-  padding-left: 20px;
-
-  padding-right: 20px;
+padding-left: 20px;
+padding-right: 20px;
 }
 
 .genre-item:hover .genre-number {
-  color: #171717;
+color: #171717;
 }
 
 .genre-item:hover .genre-description,
 .genre-item:hover .genre-arrow {
-  opacity: 1;
+opacity: 1;
 }
 
-
-/* SELECTED */
+/* =========================
+GENRE SELECTED
+========================= */
 
 .genre-item.selected {
-  background: #ffab55;
+background: #ffab55;
 
-  color: #171717;
+color: #171717;
 
-  padding-left: 20px;
-
-  padding-right: 20px;
+padding-left: 20px;
+padding-right: 20px;
 }
 
 .genre-item.selected .genre-number {
-  color: #171717;
+color: #171717;
 }
 
 .genre-item.selected .genre-description,
 .genre-item.selected .genre-arrow {
-  opacity: 1;
+opacity: 1;
 }
 
-
-/* VOTE ACTION */
+/* =========================
+VOTE ACTION
+========================= */
 
 .vote-action {
-  display: flex;
+display: flex;
 
-  align-items: center;
+align-items: center;
 
-  justify-content: space-between;
+justify-content: space-between;
 
-  gap: 30px;
+gap: 30px;
 
-  margin-top: 40px;
+margin-top: 40px;
 }
 
 .vote-action p {
-  font-size: 12px;
+font-size: 12px;
 
-  text-transform: uppercase;
+text-transform: uppercase;
 
-  letter-spacing: 1.5px;
+letter-spacing: 1.5px;
 
-  font-weight: 800;
+font-weight: 800;
 
-  opacity: .55;
+opacity: .55;
 }
 
 .vote-button {
-  display: inline-flex;
+display: inline-flex;
 
-  align-items: center;
+align-items: center;
 
-  justify-content: center;
+justify-content: center;
 
-  gap: 30px;
+gap: 30px;
 
-  padding: 17px 27px;
+padding: 17px 27px;
 
-  border: 1px solid #ffab55;
+border: 1px solid #ffab55;
 
-  background: transparent;
+background: transparent;
 
-  color: #ffab55;
+color: #ffab55;
 
-  font-size: 14px;
+font-size: 14px;
 
-  font-weight: 800;
+font-weight: 800;
 
-  cursor: pointer;
+cursor: pointer;
 
-  transition: .2s;
+transition: .2s;
 }
 
 .vote-button:hover {
-  background: #ffab55;
+background: #ffab55;
 
-  color: #171717;
+color: #171717;
 }
 
 .vote-button span {
-  font-size: 20px;
+font-size: 20px;
 }
 
 .vote-message {
-  margin-top: 25px;
+margin-top: 25px;
 
-  font-size: 13px;
+font-size: 13px;
 
-  font-weight: 700;
+font-weight: 700;
 }
 
-
 /* =========================
-   STEP TWO
+STEP TWO
 ========================= */
 
 .step-two {
-  display: grid;
+display: grid;
 
-  grid-template-columns: .5fr 1.5fr;
+grid-template-columns: .5fr 1.5fr;
 
-  gap: 8vw;
+gap: 8vw;
 }
 
 .step-two-content {
-  max-width: 900px;
+max-width: 900px;
 }
 
 .step-two-content h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(60px, 8vw, 110px);
+font-size: clamp(60px, 8vw, 110px);
 
-  font-weight: 400;
+font-weight: 400;
 
-  line-height: .85;
+line-height: .85;
 
-  letter-spacing: -4px;
+letter-spacing: -4px;
 
-  margin-bottom: 40px;
+margin-bottom: 40px;
 }
 
 .step-two-content h2 em {
-  font-style: italic;
+font-style: italic;
 }
 
 .step-two-content > p {
-  max-width: 600px;
+max-width: 600px;
 
-  font-size: 19px;
+font-size: 19px;
 
-  line-height: 1.6;
+line-height: 1.6;
 
-  color: #555;
+color: #555;
 
-  margin-bottom: 60px;
+margin-bottom: 60px;
 }
 
-
-/* PROCESS */
+/* =========================
+PROCESS
+========================= */
 
 .process {
-  border-top: 1px solid rgba(23,23,23,.2);
+border-top: 1px solid rgba(23,23,23,.2);
 }
 
 .process div {
-  display: flex;
+display: flex;
 
-  align-items: center;
+align-items: center;
 
-  gap: 35px;
+gap: 35px;
 
-  padding: 20px 0;
+padding: 20px 0;
 
-  border-bottom: 1px solid rgba(23,23,23,.2);
+border-bottom: 1px solid rgba(23,23,23,.2);
 }
 
 .process span {
-  font-size: 11px;
+font-size: 11px;
 
-  font-weight: 800;
+font-weight: 800;
 
-  color: #8f171d;
+color: #8f171d;
 }
 
 .process strong {
-  font-size: 15px;
+font-size: 15px;
 }
 
-
 /* =========================
-   CLUB NOTE
+CLUB NOTE
 ========================= */
 
 .club-note {
-  background: #687b5e;
+background: #687b5e;
 
-  color: #fff;
+color: #fff;
 
-  padding: 140px 8vw;
+padding: 140px 8vw;
 }
 
 .club-note > div {
-  max-width: 1000px;
+max-width: 1000px;
 
-  margin: auto;
+margin: auto;
 }
 
 .club-note .eyebrow {
-  color: #d9dfd4;
+color: #d9dfd4;
 }
 
 .club-note h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(60px, 8vw, 115px);
+font-size: clamp(60px, 8vw, 115px);
 
-  line-height: .85;
+line-height: .85;
 
-  font-weight: 400;
+font-weight: 400;
 
-  letter-spacing: -4px;
+letter-spacing: -4px;
 
-  margin-bottom: 45px;
+margin-bottom: 45px;
 }
 
 .club-note h2 em {
-  font-style: italic;
+font-style: italic;
 }
 
 .club-note p:last-child {
-  max-width: 550px;
+max-width: 550px;
 
-  font-size: 18px;
+font-size: 18px;
 
-  line-height: 1.6;
+line-height: 1.6;
 }
 
-
 /* =========================
-   MORE HOBBIES
+MORE HOBBIES
 ========================= */
 
 .coming-soon {
-  padding-top: 140px;
+padding-top: 140px;
 
-  padding-bottom: 150px;
+padding-bottom: 150px;
 }
 
 .coming-soon h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(65px, 9vw, 125px);
+font-size: clamp(65px, 9vw, 125px);
 
-  line-height: .82;
+line-height: .82;
 
-  font-weight: 400;
+font-weight: 400;
 
-  letter-spacing: -5px;
+letter-spacing: -5px;
 
-  margin-bottom: 45px;
+margin-bottom: 45px;
 }
 
 .coming-soon h2 em {
-  font-style: italic;
+font-style: italic;
 }
 
 .coming-copy {
-  max-width: 550px;
+max-width: 550px;
 
-  font-size: 18px;
+font-size: 18px;
 
-  line-height: 1.6;
+line-height: 1.6;
 
-  color: #555;
+color: #555;
 
-  margin-bottom: 70px;
+margin-bottom: 70px;
 }
 
 .coming-list {
-  border-top: 1px solid rgba(23,23,23,.2);
+border-top: 1px solid rgba(23,23,23,.2);
 }
 
 .coming-list div {
-  display: grid;
+display: grid;
 
-  grid-template-columns: 70px 1fr auto;
+grid-template-columns: 70px 1fr auto;
 
-  align-items: center;
+align-items: center;
 
-  padding: 22px 0;
+padding: 22px 0;
 
-  border-bottom: 1px solid rgba(23,23,23,.2);
+border-bottom: 1px solid rgba(23,23,23,.2);
 }
 
 .coming-list span {
-  font-size: 11px;
+font-size: 11px;
 
-  font-weight: 800;
+font-weight: 800;
 
-  color: #8f171d;
+color: #8f171d;
 }
 
 .coming-list strong {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: 35px;
+font-size: 35px;
 
-  font-weight: 400;
+font-weight: 400;
 }
 
 .coming-list small {
-  font-size: 11px;
+font-size: 11px;
 
-  text-transform: uppercase;
+text-transform: uppercase;
 
-  letter-spacing: 1px;
+letter-spacing: 1px;
 
-  color: #999;
+color: #999;
 }
 
+/* =========================
+ABOUT
+========================= */
+
+.about-section {
+background: #f5efe4;
+
+display: grid;
+
+grid-template-columns: .5fr 1.5fr;
+
+gap: 8vw;
+
+align-items: start;
+}
+
+.about-content {
+max-width: 900px;
+}
+
+.about-content h2 {
+font-family: “DM Serif Display”, serif;
+
+font-size: clamp(55px, 7vw, 100px);
+
+line-height: .88;
+
+font-weight: 400;
+
+letter-spacing: -4px;
+
+margin-bottom: 40px;
+}
+
+.about-content h2 em {
+font-style: italic;
+}
+
+.about-content > p {
+max-width: 600px;
+
+font-size: 19px;
+
+line-height: 1.65;
+
+color: #555;
+}
 
 /* =========================
-   JOIN
+JOURNAL TEASER
+========================= */
+
+.journal-teaser {
+background: #ffab55;
+
+color: #171717;
+
+padding: 110px 8vw;
+}
+
+.journal-teaser-inner {
+max-width: 1150px;
+
+margin: auto;
+
+display: flex;
+
+align-items: flex-end;
+
+justify-content: space-between;
+
+gap: 50px;
+}
+
+.journal-teaser .eyebrow {
+color: #8f171d;
+}
+
+.journal-teaser h2 {
+font-family: “DM Serif Display”, serif;
+
+font-size: clamp(60px, 8vw, 110px);
+
+line-height: .84;
+
+font-weight: 400;
+
+letter-spacing: -4px;
+}
+
+.journal-teaser h2 em {
+font-style: italic;
+}
+
+.journal-teaser .button {
+flex-shrink: 0;
+
+background: #171717;
+
+color: #fff;
+}
+
+.journal-teaser .button:hover {
+background: #8f171d;
+}
+
+/* =========================
+JOIN
 ========================= */
 
 .join-section {
-  background: #171717;
+background: #171717;
 
-  color: #fff;
+color: #fff;
 
-  padding: 130px 8vw;
+padding: 130px 8vw;
 
-  text-align: center;
+text-align: center;
 }
 
 .join-section .eyebrow {
-  color: #ffab55;
+color: #ffab55;
 }
 
 .join-section h2 {
-  font-family: "DM Serif Display", serif;
+font-family: “DM Serif Display”, serif;
 
-  font-size: clamp(60px, 8vw, 110px);
+font-size: clamp(60px, 8vw, 110px);
 
-  line-height: .85;
+line-height: .85;
 
-  font-weight: 400;
+font-weight: 400;
 
-  letter-spacing: -4px;
+letter-spacing: -4px;
 
-  margin-bottom: 50px;
+margin-bottom: 50px;
 }
 
 .join-section h2 em {
-  font-style: italic;
+font-style: italic;
 }
 
-
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 .footer {
-  padding: 45px 6vw;
+padding: 45px 6vw;
 
-  background: #171717;
+background: #171717;
 
-  color: #fff;
+color: #fff;
 
-  border-top: 1px solid rgba(255,255,255,.15);
+border-top: 1px solid rgba(255,255,255,.15);
 
-  display: grid;
+display: grid;
 
-  grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
 
-  align-items: center;
+align-items: center;
 
-  gap: 30px;
+gap: 30px;
 }
 
 .footer p {
-  font-size: 11px;
+font-size: 11px;
 
-  text-align: center;
+text-align: center;
 
-  opacity: .5;
+opacity: .5;
 }
 
 .footer-links {
-  display: flex;
+display: flex;
 
-  justify-content: flex-end;
+justify-content: flex-end;
 
-  gap: 20px;
+gap: 20px;
 
-  font-size: 11px;
+font-size: 11px;
 
-  opacity: .7;
+opacity: .7;
+
+flex-wrap: wrap;
 }
 
+.footer-links a:hover {
+opacity: 1;
+}
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width: 800px) {
 
-  .site-header {
-    padding: 22px 6vw;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 100%;
-
-    min-height: 100vh;
-
-    padding: 100px 8vw 50px;
-
-    background: #f5efe4;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 25px;
-
-    font-size: 22px;
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .hero {
-    min-height: 100vh;
-
-    padding: 140px 6vw 80px;
-
-    align-items: center;
-  }
-
-  .hero h1 {
-    font-size: clamp(65px, 19vw, 95px);
-
-    letter-spacing: -4px;
-
-    margin-bottom: 40px;
-  }
-
-  .hero h1 strong {
-    letter-spacing: -4px;
-  }
-
-  .hero-copy {
-    font-size: 18px;
-  }
-
-  .section {
-    padding: 85px 6vw;
-  }
-
-  .book-intro {
-    display: block;
-
-    padding-top: 90px;
-
-    padding-bottom: 100px;
-  }
-
-  .intro-label {
-    margin-bottom: 45px;
-  }
-
-  .intro-content h2 {
-    font-size: 58px;
-
-    letter-spacing: -3px;
-  }
-
-  .intro-lead {
-    font-size: 21px;
-  }
-
-  .vote-section {
-    padding: 90px 6vw;
-  }
-
-  .vote-heading {
-    margin-bottom: 60px;
-  }
-
-  .vote-heading h2 {
-    font-size: clamp(55px, 15vw, 82px);
-
-    letter-spacing: -3px;
-  }
-
-  .vote-intro {
-    font-size: 15px;
-  }
-
-  .genre-item {
-    grid-template-columns: 40px 1fr 35px;
-
-    min-height: 82px;
-
-    gap: 10px;
-  }
-
-  .genre-name {
-    font-size: 32px;
-  }
-
-  .genre-description {
-    display: none;
-  }
-
-  .genre-arrow {
-    font-size: 20px;
-  }
-
-  .vote-action {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    margin-top: 35px;
-  }
-
-  .vote-button {
-    width: 100%;
-  }
-
-  .step-two {
-    display: block;
-  }
-
-  .step-number {
-    margin-bottom: 45px;
-  }
-
-  .step-two-content h2 {
-    font-size: 62px;
-
-    letter-spacing: -3px;
-  }
-
-  .club-note {
-    padding: 95px 6vw;
-  }
-
-  .club-note h2 {
-    font-size: 62px;
-
-    letter-spacing: -3px;
-  }
-
-  .coming-soon h2 {
-    font-size: 68px;
-
-    letter-spacing: -3px;
-  }
-
-  .coming-list div {
-    grid-template-columns: 40px 1fr;
-
-    gap: 15px;
-  }
-
-  .coming-list small {
-    grid-column: 2;
-  }
-
-  .join-section {
-    padding: 100px 6vw;
-  }
-
-  .join-section h2 {
-    font-size: 65px;
-
-    letter-spacing: -3px;
-  }
-
-  .footer {
-    grid-template-columns: 1fr;
-
-    text-align: center;
-
-    gap: 25px;
-  }
-
-  .footer p {
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-
-    flex-wrap: wrap;
-  }
+.site-header {
+padding: 22px 6vw;
+}
+
+.menu-toggle {
+display: block;
+
+position: relative;
+z-index: 30;
 
 }
 
+.nav {
+display: none;
 
-/* SMALL PHONES */
+position: absolute;
+top: 0;
+right: 0;
+width: 100%;
+min-height: 100vh;
+padding: 100px 8vw 50px;
+background: #f5efe4;
+flex-direction: column;
+align-items: flex-start;
+gap: 25px;
+font-size: 22px;
+
+}
+
+.nav.open {
+display: flex;
+}
+
+.nav-cta {
+font-size: 15px;
+
+padding: 12px 20px;
+margin-top: 10px;
+
+}
+
+/* HERO */
+
+.hero {
+min-height: 100vh;
+
+padding: 140px 6vw 80px;
+align-items: center;
+
+}
+
+.hero h1 {
+font-size: clamp(65px, 19vw, 95px);
+
+letter-spacing: -4px;
+margin-bottom: 40px;
+
+}
+
+.hero h1 strong {
+letter-spacing: -4px;
+}
+
+.hero-copy {
+font-size: 18px;
+}
+
+/* GENERAL */
+
+.section {
+padding: 85px 6vw;
+}
+
+/* BOOK INTRO */
+
+.book-intro {
+display: block;
+
+padding-top: 90px;
+padding-bottom: 100px;
+
+}
+
+.intro-label {
+margin-bottom: 45px;
+}
+
+.intro-content h2 {
+font-size: 58px;
+
+letter-spacing: -3px;
+
+}
+
+.intro-lead {
+font-size: 21px;
+}
+
+/* VOTE */
+
+.vote-section {
+padding: 90px 6vw;
+}
+
+.vote-heading {
+margin-bottom: 60px;
+}
+
+.vote-heading h2 {
+font-size: clamp(55px, 15vw, 82px);
+
+letter-spacing: -3px;
+
+}
+
+.vote-intro {
+font-size: 15px;
+}
+
+.genre-item {
+grid-template-columns: 40px 1fr 35px;
+
+min-height: 82px;
+gap: 10px;
+
+}
+
+.genre-name {
+font-size: 32px;
+}
+
+.genre-description {
+display: none;
+}
+
+.genre-arrow {
+font-size: 20px;
+}
+
+.vote-action {
+flex-direction: column;
+
+align-items: flex-start;
+margin-top: 35px;
+
+}
+
+.vote-button {
+width: 100%;
+}
+
+/* STEP TWO */
+
+.step-two {
+display: block;
+}
+
+.step-number {
+margin-bottom: 45px;
+}
+
+.step-two-content h2 {
+font-size: 62px;
+
+letter-spacing: -3px;
+
+}
+
+/* CLUB NOTE */
+
+.club-note {
+padding: 95px 6vw;
+}
+
+.club-note h2 {
+font-size: 62px;
+
+letter-spacing: -3px;
+
+}
+
+/* COMING SOON */
+
+.coming-soon h2 {
+font-size: 68px;
+
+letter-spacing: -3px;
+
+}
+
+.coming-list div {
+grid-template-columns: 40px 1fr;
+
+gap: 15px;
+
+}
+
+.coming-list small {
+grid-column: 2;
+}
+
+/* ABOUT */
+
+.about-section {
+display: block;
+}
+
+.about-section > .eyebrow {
+margin-bottom: 45px;
+}
+
+.about-content h2 {
+font-size: 58px;
+
+letter-spacing: -3px;
+
+}
+
+.about-content > p {
+font-size: 17px;
+}
+
+/* JOURNAL */
+
+.journal-teaser {
+padding: 90px 6vw;
+}
+
+.journal-teaser-inner {
+display: block;
+}
+
+.journal-teaser h2 {
+font-size: 62px;
+
+letter-spacing: -3px;
+margin-bottom: 45px;
+
+}
+
+.journal-teaser .button {
+width: 100%;
+}
+
+/* JOIN */
+
+.join-section {
+padding: 100px 6vw;
+}
+
+.join-section h2 {
+font-size: 65px;
+
+letter-spacing: -3px;
+
+}
+
+/* FOOTER */
+
+.footer {
+grid-template-columns: 1fr;
+
+text-align: center;
+gap: 25px;
+
+}
+
+.footer p {
+text-align: center;
+}
+
+.footer-links {
+justify-content: center;
+
+flex-wrap: wrap;
+
+}
+
+}
+
+/* =========================
+SMALL PHONES
+========================= */
 
 @media(max-width: 500px) {
 
-  .wordmark {
-    font-size: 19px;
-  }
+.wordmark {
+font-size: 19px;
+}
 
-  .hero h1 {
-    font-size: 67px;
-  }
+.hero h1 {
+font-size: 67px;
+}
 
-  .hero-copy {
-    font-size: 17px;
-  }
+.hero-copy {
+font-size: 17px;
+}
 
-  .button {
-    width: 100%;
-  }
+.button {
+width: 100%;
+}
 
-  .intro-content h2 {
-    font-size: 52px;
-  }
+.intro-content h2 {
+font-size: 52px;
+}
 
-  .vote-heading h2 {
-    font-size: 58px;
-  }
+.vote-heading h2 {
+font-size: 58px;
+}
 
-  .genre-name {
-    font-size: 29px;
-  }
+.genre-name {
+font-size: 29px;
+}
 
-  .step-two-content h2 {
-    font-size: 55px;
-  }
+.step-two-content h2 {
+font-size: 55px;
+}
 
-  .club-note h2 {
-    font-size: 55px;
-  }
+.club-note h2 {
+font-size: 55px;
+}
 
-  .coming-soon h2 {
-    font-size: 58px;
-  }
+.coming-soon h2 {
+font-size: 58px;
+}
+
+.about-content h2 {
+font-size: 52px;
+}
+
+.journal-teaser h2 {
+font-size: 55px;
+}
 
 }
