@@ -2,82 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
   <meta
     name="description"
-    content="The Everything Hobbies Journal — books, culture, music, film, ideas and things worth talking about."
+    content="The Everything Hobbies Journal. Books, culture, music, film, ideas and everything worth talking about."
   >
   <title>The Journal — Everything Hobbies</title>
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 <body>
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
-<header class="site-header">
-  <a class="wordmark" href="index.html">
+===================================================== -->
+<header class="site-header solid">
+  <a
+    class="wordmark"
+    href="index.html"
+  >
     everything <span>hobbies</span>
   </a>
   <button
     class="menu-toggle"
     id="menuToggle"
+    type="button"
     aria-label="Open menu"
     aria-expanded="false"
-    type="button"
   >
     <span></span>
     <span></span>
   </button>
-  <nav class="nav" id="nav">
+  <nav
+    class="nav"
+    id="nav"
+  >
     <a href="index.html#bookclub">
       Book Club
     </a>
-    <a href="journal.html">
+    <a
+      class="active"
+      href="journal.html"
+    >
       Journal
     </a>
     <a href="index.html#coming-soon">
       Coming Soon
     </a>
-    <a href="index.html#about">
+    <a href="about.html">
       About
     </a>
-    <a class="nav-cta" href="join.html">
+    <a
+      class="nav-cta"
+      href="join.html"
+    >
       Join us
     </a>
   </nav>
 </header>
 <main>
-<!-- =========================
+<!-- =====================================================
      JOURNAL HERO
-========================= -->
-<section class="journal-hero">
-  <div class="journal-hero-inner">
-    <p class="eyebrow">
-      The Everything Hobbies Journal
-    </p>
+===================================================== -->
+<section class="journal-page-hero">
+  <div class="journal-page-hero-inner">
+    <div class="journal-hero-top">
+      <p class="eyebrow">
+        The Everything Hobbies Journal
+      </p>
+      <span class="journal-issue">
+        Issue No. 01
+      </span>
+    </div>
     <h1>
       Things worth<br>
       <em>talking about.</em>
     </h1>
-    <p class="journal-intro">
-      Essays, thoughts, recommendations and rabbit holes
-      about the things we love, notice and keep coming back to.
-    </p>
+    <div class="journal-hero-bottom">
+      <p>
+        Books, music, culture, film, ideas and the
+        wonderfully unnecessary things we find ourselves
+        thinking about.
+      </p>
+      <span class="journal-arrow">
+        ↓
+      </span>
+    </div>
   </div>
 </section>
-<!-- =========================
-     CATEGORY FILTER
-========================= -->
-<section class="journal-navigation">
-  <div class="journal-navigation-inner">
+<!-- =====================================================
+     CATEGORY NAVIGATION
+===================================================== -->
+<section class="journal-categories">
+  <div class="journal-categories-inner">
     <p class="eyebrow dark">
-      Browse the Journal
+      Browse by interest
     </p>
     <div class="category-filter">
       <button
@@ -125,15 +159,18 @@
     </div>
   </div>
 </section>
-<!-- =========================
-     FEATURED ARTICLE
-========================= -->
-<section class="featured-section">
+<!-- =====================================================
+     FEATURED
+===================================================== -->
+<section class="journal-featured">
   <div class="journal-container">
-    <div class="section-heading">
+    <div class="journal-section-label">
       <p class="eyebrow dark">
-        Featured
+        Start here
       </p>
+      <span>
+        Featured story
+      </span>
     </div>
     <div id="featuredArticle">
       <p class="journal-loading">
@@ -142,19 +179,25 @@
     </div>
   </div>
 </section>
-<!-- =========================
-     ALL ARTICLES
-========================= -->
-<section class="articles-section">
+<!-- =====================================================
+     LATEST STORIES
+===================================================== -->
+<section class="journal-latest">
   <div class="journal-container">
-    <div class="section-heading">
-      <p class="eyebrow dark">
-        Latest from the Journal
+    <div class="journal-latest-heading">
+      <div>
+        <p class="eyebrow dark">
+          The latest
+        </p>
+        <h2>
+          Pull up a chair.<br>
+          <em>Stay a while.</em>
+        </h2>
+      </div>
+      <p>
+        A running collection of things we're reading,
+        watching, listening to and thinking about.
       </p>
-      <h2>
-        Read something.<br>
-        <em>Stay a while.</em>
-      </h2>
     </div>
     <div
       class="article-grid"
@@ -166,47 +209,120 @@
     </div>
   </div>
 </section>
-<!-- =========================
-     JOURNAL NOTE
-========================= -->
-<section class="journal-note">
-  <div class="journal-note-inner">
+<!-- =====================================================
+     MID-PAGE STATEMENT
+===================================================== -->
+<section class="journal-statement">
+  <div class="journal-statement-inner">
     <p class="eyebrow">
-      Everything Hobbies
+      A note from the journal
     </p>
     <h2>
-      Curiosity is<br>
-      <em>a hobby too.</em>
+      You don't need<br>
+      a reason to be<br>
+      <em>interested.</em>
     </h2>
     <p>
-      The Journal is where we follow the things
-      that make us stop, think, feel, laugh or
-      immediately send something to a friend.
+      Not everything has to become a skill.
+      Not every interest needs a purpose.
+      Sometimes you can simply like something
+      because you like it.
     </p>
   </div>
 </section>
-<!-- =========================
-     JOIN
-========================= -->
-<section class="join-section">
-  <p class="eyebrow">
-    Stay curious
-  </p>
-  <h2>
-    Never miss<br>
-    <em>a good conversation.</em>
-  </h2>
-  <a
-    href="join.html"
-    class="button button-light"
-  >
-    Join the list
-  </a>
+<!-- =====================================================
+     MORE TO COME
+===================================================== -->
+<section class="journal-more section">
+  <div class="journal-more-heading">
+    <p class="eyebrow dark">
+      And we're only getting started
+    </p>
+    <h2>
+      More things.<br>
+      <em>More conversations.</em>
+    </h2>
+  </div>
+  <div class="journal-topics">
+    <div class="journal-topic">
+      <span>
+        01
+      </span>
+      <h3>
+        Books
+      </h3>
+      <p>
+        What we're reading,
+        loving and arguing about.
+      </p>
+    </div>
+    <div class="journal-topic">
+      <span>
+        02
+      </span>
+      <h3>
+        Music
+      </h3>
+      <p>
+        Songs, albums, playlists
+        and everything in between.
+      </p>
+    </div>
+    <div class="journal-topic">
+      <span>
+        03
+      </span>
+      <h3>
+        Culture
+      </h3>
+      <p>
+        The little and big things
+        shaping the way we see the world.
+      </p>
+    </div>
+    <div class="journal-topic">
+      <span>
+        04
+      </span>
+      <h3>
+        Life & Ideas
+      </h3>
+      <p>
+        Thoughts, observations
+        and everyday rabbit holes.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     JOIN CTA
+===================================================== -->
+<section class="journal-join">
+  <div>
+    <p class="eyebrow">
+      Stay curious
+    </p>
+    <h2>
+      Come for the<br>
+      <em>conversation.</em>
+    </h2>
+    <p>
+      Join the Everything Hobbies list and be here
+      for what's next.
+    </p>
+    <a
+      href="join.html"
+      class="button button-light"
+    >
+      Join the list
+      <span>→</span>
+    </a>
+  </div>
 </section>
 </main>
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 <footer class="footer">
   <a
     class="wordmark"
@@ -228,7 +344,7 @@
     <a href="index.html#coming-soon">
       Coming soon
     </a>
-    <a href="index.html#about">
+    <a href="about.html">
       About
     </a>
     <a href="join.html">
