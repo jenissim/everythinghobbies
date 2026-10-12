@@ -1,33 +1,1322 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore — Everything Hobbies</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explore Interests | Everything Hobbies</title>
+
+  <meta
+    name="description"
+    content="Discover creative pursuits, film, photography, books, fandoms, digital culture, games and more at Everything Hobbies."
+  >
+
+  <meta name="theme-color" content="#f5f0e7">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --cream: #f5f0e7;
+      --paper: #faf7f0;
+      --burgundy: #681d24;
+      --deep-burgundy: #481218;
+      --orange: #d77b3f;
+      --green: #53654b;
+      --ink: #171513;
+      --muted: #756e67;
+      --border: #ded5c8;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: 78px;
+      padding: 14px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wordmark {
+      flex-shrink: 0;
+      color: var(--burgundy);
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+
+    .wordmark-tagline {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--burgundy);
+    }
+
+    .nav .nav-cta {
+      padding: 11px 16px;
+      background: var(--burgundy);
+      color: var(--paper);
+      border: 1px solid var(--burgundy);
+      border-radius: 2px;
+    }
+
+    .nav .nav-cta:hover {
+      background: var(--deep-burgundy);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 8px 0 8px 10px;
+      border: 0;
+      background: transparent;
+      color: var(--burgundy);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .page-hero {
+      padding: 83px 6% 77px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 27px;
+      height: 2px;
+      background: var(--orange);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .page-hero h1 {
+      max-width: 950px;
+      margin-bottom: 25px;
+      color: var(--burgundy);
+      font-size: clamp(57px, 9vw, 104px);
+      line-height: 0.99;
+      letter-spacing: -1.8px;
+    }
+
+    .page-hero h1 em {
+      color: var(--orange);
+      font-weight: 400;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .hero-note span {
+      width: 7px;
+      height: 7px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    /* DIRECTORY */
+
+    .directory-section {
+      padding: 64px 6% 90px;
+    }
+
+    .directory-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .directory-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .directory-heading h2 {
+      margin-bottom: 0;
+      color: var(--burgundy);
+      font-size: clamp(34px, 5vw, 49px);
+      line-height: 1.1;
+    }
+
+    .results-count {
+      flex-shrink: 0;
+      padding-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* FILTERS */
+
+    .filter-area {
+      margin-bottom: 35px;
+      padding: 19px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .filter-label {
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter {
+      min-height: 37px;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .filter:hover {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+    }
+
+    .filter.active {
+      border-color: var(--burgundy);
+      background: var(--burgundy);
+      color: var(--paper);
+    }
+
+    .filter:focus-visible,
+    .menu-toggle:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    /* INTEREST CARDS */
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .explore-card {
+      position: relative;
+      display: flex;
+      min-height: 270px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px 23px 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--burgundy);
+      background: var(--paper);
+    }
+
+    .card-topline {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 29px;
+    }
+
+    .card-number {
+      color: var(--orange);
+      font-family: var(--serif);
+      font-size: 21px;
+    }
+
+    .card-category {
+      color: var(--green);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .explore-card h3 {
+      margin-bottom: 12px;
+      color: var(--burgundy);
+      font-size: clamp(25px, 2.7vw, 31px);
+      line-height: 1.13;
+    }
+
+    .explore-card p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .card-topics {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 17px;
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .card-link span {
+      color: var(--orange);
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .explore-card:hover .card-link span {
+      transform: translateX(4px);
+    }
+
+    /* VARIATIONS */
+
+    .explore-card.burgundy-card {
+      border-color: var(--burgundy);
+      background: var(--burgundy);
+    }
+
+    .burgundy-card .card-number,
+    .burgundy-card .card-link span {
+      color: #e9a06a;
+    }
+
+    .burgundy-card .card-category {
+      color: #e6c9b9;
+    }
+
+    .burgundy-card h3 {
+      color: var(--paper);
+    }
+
+    .burgundy-card p,
+    .burgundy-card .card-topics {
+      color: #eadbd3;
+    }
+
+    .burgundy-card .card-topics {
+      border-color: rgba(250, 247, 240, 0.25);
+    }
+
+    .burgundy-card .card-link {
+      color: var(--paper);
+    }
+
+    .burgundy-card:hover {
+      background: var(--deep-burgundy);
+    }
+
+    .explore-card.green-card {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .green-card .card-number,
+    .green-card .card-link span {
+      color: #f0b27d;
+    }
+
+    .green-card .card-category {
+      color: #e4e8de;
+    }
+
+    .green-card h3 {
+      color: white;
+    }
+
+    .green-card p,
+    .green-card .card-topics {
+      color: #e7e9e1;
+    }
+
+    .green-card .card-topics {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .green-card .card-link {
+      color: white;
+    }
+
+    .green-card:hover {
+      background: #43533c;
+    }
+
+    .explore-card.orange-card {
+      border-color: #e7c2a6;
+      background: #f0dfcf;
+    }
+
+    .orange-card .card-number,
+    .orange-card .card-link span {
+      color: var(--burgundy);
+    }
+
+    .orange-card .card-category {
+      color: var(--burgundy);
+    }
+
+    .orange-card h3 {
+      color: var(--burgundy);
+    }
+
+    .orange-card p,
+    .orange-card .card-topics {
+      color: #6e5a4b;
+    }
+
+    .orange-card .card-topics {
+      border-color: #d7bba4;
+    }
+
+    .orange-card .card-link {
+      color: var(--burgundy);
+    }
+
+    .orange-card:hover {
+      background: #f5e7d9;
+    }
+
+    .explore-card[hidden] {
+      display: none;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 45px 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty-state h3 {
+      margin-bottom: 8px;
+      color: var(--burgundy);
+      font-size: 27px;
+    }
+
+    .empty-state p {
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    /* COMMUNITY INVITATION */
+
+    .community-section {
+      padding: 66px 6%;
+      background: var(--burgundy);
+      color: var(--paper);
+    }
+
+    .community-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .community-copy {
+      max-width: 650px;
+    }
+
+    .community-copy .section-label {
+      color: #e9a06a;
+    }
+
+    .community-copy h2 {
+      margin-bottom: 17px;
+      color: var(--paper);
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.08;
+    }
+
+    .community-copy p {
+      max-width: 560px;
+      margin-bottom: 0;
+      color: #eadbd3;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .community-button {
+      display: inline-flex;
+      min-height: 48px;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 13px 19px;
+      border: 1px solid var(--orange);
+      border-radius: 2px;
+      background: var(--orange);
+      color: var(--deep-burgundy);
+      font-size: 11px;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .community-button:hover {
+      background: transparent;
+      color: var(--paper);
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 36px 6% 22px;
+      background: var(--deep-burgundy);
+      color: var(--paper);
+      border-top: 1px solid rgba(250, 247, 240, 0.18);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer .wordmark {
+      color: var(--paper);
+    }
+
+    .footer .wordmark-tagline {
+      color: #d9c8c0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #eadbd3;
+      font-size: 11px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #e9a06a;
+    }
+
+    .copyright {
+      max-width: 1120px;
+      margin: 25px auto 0;
+      padding-top: 17px;
+      border-top: 1px solid rgba(250, 247, 240, 0.2);
+      color: #d9c8c0;
+      font-size: 10px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .site-header {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 5% 20px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav a {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav .nav-cta {
+        margin-top: 12px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .community-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header {
+        min-height: 72px;
+      }
+
+      .wordmark {
+        font-size: 22px;
+      }
+
+      .wordmark-tagline {
+        font-size: 8px;
+      }
+
+      .page-hero {
+        padding: 63px 5% 56px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(51px, 12.5vw, 69px);
+        letter-spacing: -1px;
+        line-height: 1.02;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .directory-section {
+        padding: 48px 5% 65px;
+      }
+
+      .directory-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .directory-heading h2 {
+        font-size: 38px;
+      }
+
+      .filter-area {
+        margin-bottom: 25px;
+      }
+
+      .filter-row {
+        gap: 7px;
+      }
+
+      .filter {
+        padding: 9px 11px;
+        font-size: 10px;
+      }
+
+      .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .explore-card {
+        min-height: 235px;
+        padding: 23px 21px;
+      }
+
+      .card-topline {
+        margin-bottom: 21px;
+      }
+
+      .explore-card h3 {
+        font-size: 30px;
+      }
+
+      .community-section {
+        padding: 52px 5%;
+      }
+
+      .community-copy h2 {
+        font-size: 39px;
+      }
+
+      .community-button {
+        width: 100%;
+      }
+
+      .footer {
+        padding: 31px 5% 20px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-links {
+        gap: 14px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header solid"><a class="wordmark" href="index.html">everything<span>hobbies</span></a><button class="menu-toggle" aria-label="Open menu"><span></span><span></span></button><nav class="nav"><a class="active" href="explore.html">Explore</a><a href="books.html">Book Club</a><a href="journal.html">Journal</a><a href="about.html">About</a><a class="nav-cta" href="join.html">Join us</a></nav></header>
-<main>
-  <section class="page-hero red-bg"><p class="eyebrow">Explore</p><h1>Follow the<br><em>curiosity.</em></h1><p>There’s no right way to have a hobby. Pick something that catches your attention.</p></section>
-  <section class="section">
-    <div class="filter-row">
-      <button class="filter active" data-filter="all">Everything</button><button class="filter" data-filter="creative">Creative</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="lifestyle">Lifestyle</button>
+
+  <header class="site-header">
+    <a class="wordmark" href="index.html">
+      everything hobbies
+      <span class="wordmark-tagline">
+        Everything you love. Worth talking about.
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      Menu <span aria-hidden="true">+</span>
+    </button>
+
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a class="active" href="explore.html" aria-current="page">Explore</a>
+      <a href="books.html">Book Club</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="join.html">Join us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+      <div class="hero-inner">
+        <p class="eyebrow">A world of interests</p>
+
+        <h1>
+          Follow the<br>
+          <em>curiosity.</em>
+        </h1>
+
+        <p class="hero-description">
+          From the arts you want to try to the fictional worlds you
+          cannot stop thinking about. Discover interests, find your
+          people and make room for the things that fascinate you.
+        </p>
+
+        <div class="hero-note">
+          <span></span>
+          No expertise required. Just curiosity.
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEREST DIRECTORY -->
+
+    <section class="directory-section">
+      <div class="directory-inner">
+
+        <div class="directory-heading">
+          <div>
+            <p class="section-label">01 / The interest directory</p>
+            <h2>What are you into?</h2>
+          </div>
+
+          <span class="results-count" id="results-count">
+            10 interest worlds
+          </span>
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="filter-area">
+          <p class="filter-label">Find your corner</p>
+
+          <div class="filter-row" aria-label="Filter interests">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">
+              Everything
+            </button>
+
+            <button class="filter" type="button" data-filter="creative" aria-pressed="false">
+              Arts & Making
+            </button>
+
+            <button class="filter" type="button" data-filter="culture" aria-pressed="false">
+              Culture & Fandoms
+            </button>
+
+            <button class="filter" type="button" data-filter="media" aria-pressed="false">
+              Film & Digital Media
+            </button>
+
+            <button class="filter" type="button" data-filter="learning" aria-pressed="false">
+              Ideas & Learning
+            </button>
+
+            <button class="filter" type="button" data-filter="lifestyle" aria-pressed="false">
+              Everyday Life
+            </button>
+
+            <button class="filter" type="button" data-filter="play" aria-pressed="false">
+              Games & Play
+            </button>
+          </div>
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="explore-grid" id="explore-grid">
+
+          <article class="explore-card" data-category="creative">
+            <div class="card-topline">
+              <span class="card-number">01</span>
+              <span class="card-category">Arts & Making</span>
+            </div>
+
+            <h3>The Creative Arts</h3>
+
+            <p>
+              Make something with your hands, experiment with materials
+              or explore a creative skill you have always wanted to try.
+            </p>
+
+            <div class="card-topics">
+              Pottery · Illustration · Painting · Crafts · Design · DIY
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card burgundy-card" data-category="media">
+            <div class="card-topline">
+              <span class="card-number">02</span>
+              <span class="card-category">Film & Visual Culture</span>
+            </div>
+
+            <h3>Film & Visual Storytelling</h3>
+
+            <p>
+              Look beyond the screen. Explore how images are made,
+              how stories are told and why certain visuals stay with us.
+            </p>
+
+            <div class="card-topics">
+              Film Club · Film Studies · Cinematography · Photography · Editing
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card orange-card" data-category="media">
+            <div class="card-topline">
+              <span class="card-number">03</span>
+              <span class="card-category">Digital Culture</span>
+            </div>
+
+            <h3>Digital Life & Media</h3>
+
+            <p>
+              Explore the creative side of the internet, from making
+              digital content to understanding the media we consume.
+            </p>
+
+            <div class="card-topics">
+              Content Creation · Social Media · Video Editing · Digital Design
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card green-card" data-category="culture">
+            <div class="card-topline">
+              <span class="card-number">04</span>
+              <span class="card-category">Books & The Written Word</span>
+            </div>
+
+            <h3>Literature & Storytelling</h3>
+
+            <p>
+              Get lost in a story, find your next read or explore
+              the many ways words can move, challenge and connect us.
+            </p>
+
+            <div class="card-topics">
+              Book Club · Novels · Poetry · Essays · Creative Writing
+            </div>
+
+            <a class="card-link" href="books.html">
+              <span>Visit the Book Club</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card" data-category="culture">
+            <div class="card-topline">
+              <span class="card-number">05</span>
+              <span class="card-category">Fandoms & Fictional Worlds</span>
+            </div>
+
+            <h3>Anime, Manga & Fandoms</h3>
+
+            <p>
+              Go deeper into the worlds, characters and communities
+              that inspire fan theories, conversations and creativity.
+            </p>
+
+            <div class="card-topics">
+              Anime Club · Manga · Character Analysis · Fan Culture · Lore
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card orange-card" data-category="culture">
+            <div class="card-topline">
+              <span class="card-number">06</span>
+              <span class="card-category">Music & Sound</span>
+            </div>
+
+            <h3>Music & Listening Culture</h3>
+
+            <p>
+              Find your next favourite artist, revisit an old classic
+              or learn to appreciate the details behind the sound.
+            </p>
+
+            <div class="card-topics">
+              Music Discovery · Playlists · Songwriting · Music Theory
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card burgundy-card" data-category="lifestyle">
+            <div class="card-topline">
+              <span class="card-number">07</span>
+              <span class="card-category">Food & Everyday Rituals</span>
+            </div>
+
+            <h3>Food & The Art of Living</h3>
+
+            <p>
+              Experiment in the kitchen, explore food traditions
+              or find joy in the small rituals that shape everyday life.
+            </p>
+
+            <div class="card-topics">
+              Cooking · Baking · Food Culture · Recipes · Culinary Experiments
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card green-card" data-category="lifestyle">
+            <div class="card-topline">
+              <span class="card-number">08</span>
+              <span class="card-category">Living & Personal Style</span>
+            </div>
+
+            <h3>Style & Personal Spaces</h3>
+
+            <p>
+              Explore the things that express who you are, from what
+              you wear to the spaces and objects you surround yourself with.
+            </p>
+
+            <div class="card-topics">
+              Fashion · Interior Design · Collecting · Personal Aesthetics
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card" data-category="learning">
+            <div class="card-topline">
+              <span class="card-number">09</span>
+              <span class="card-category">Ideas & Learning</span>
+            </div>
+
+            <h3>Curiosity & The Human Experience</h3>
+
+            <p>
+              Follow a question, examine an idea or learn about the
+              people, histories and perspectives that shape our world.
+            </p>
+
+            <div class="card-topics">
+              Psychology · Philosophy · History · Culture · Social Ideas
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="explore-card orange-card" data-category="play">
+            <div class="card-topline">
+              <span class="card-number">10</span>
+              <span class="card-category">Games & Play</span>
+            </div>
+
+            <h3>Play, Puzzles & Strategy</h3>
+
+            <p>
+              Bring people together through games, solve something
+              challenging or explore the art of play and competition.
+            </p>
+
+            <div class="card-topics">
+              Board Games · Video Games · Puzzles · Tabletop Games · Quizzes
+            </div>
+
+            <a class="card-link" href="join.html">
+              <span>Discover what's next</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="empty-state" id="empty-state">
+          <h3>Nothing in this corner just yet.</h3>
+          <p>Try another category to keep exploring.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMMUNITY CTA -->
+
+    <section class="community-section">
+      <div class="community-inner">
+
+        <div class="community-copy">
+          <p class="section-label">02 / Your interests belong here</p>
+
+          <h2>Your thing doesn't have to be everyone's thing.</h2>
+
+          <p>
+            Have a niche interest, an idea for a club or a subject you
+            wish more people talked about? Everything Hobbies is growing.
+            Join us and stay in the loop as new spaces take shape.
+          </p>
+        </div>
+
+        <a class="community-button" href="join.html">
+          Find your place <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <a class="wordmark" href="index.html">
+        everything hobbies
+        <span class="wordmark-tagline">
+          Everything you love. Worth talking about.
+        </span>
+      </a>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="books.html">Book Club</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="join.html">Join us</a>
+      </nav>
+
     </div>
-    <div class="explore-grid">
-      <a class="explore-card" data-category="culture" href="books.html"><span>01 / CULTURE</span><h2>Reading</h2><p>Novels, essays, poetry, book clubs and the books that stay with you.</p><b>Explore →</b></a>
-      <a class="explore-card dark-card" data-category="creative" href="journal.html"><span>02 / CREATIVE</span><h2>Writing</h2><p>Personal essays, observations, prompts and the occasional overshare.</p><b>Explore →</b></a>
-      <a class="explore-card green-card" data-category="lifestyle" id="fashion" href="#"><span>03 / LIFESTYLE</span><h2>Fashion</h2><p>Looks, moodboards, references, red carpets and figuring out your style.</p><b>Explore →</b></a>
-      <a class="explore-card orange-card" data-category="culture" id="music" href="#"><span>04 / CULTURE</span><h2>Music</h2><p>New finds, old favourites, playlists and the songs you cannot stop replaying.</p><b>Explore →</b></a>
-      <a class="explore-card" data-category="lifestyle" href="#"><span>05 / LIFESTYLE</span><h2>Cooking</h2><p>Recipes, experiments, comfort food and things worth making twice.</p><b>Explore →</b></a>
-      <a class="explore-card dark-card" data-category="culture" href="#"><span>06 / CULTURE</span><h2>Podcasts</h2><p>Conversations to put on while walking, cooking or doing absolutely nothing.</p><b>Explore →</b></a>
-      <a class="explore-card green-card" data-category="culture" href="#"><span>07 / CULTURE</span><h2>Audiobooks</h2><p>Stories for commutes, chores and those “one more chapter” moments.</p><b>Explore →</b></a>
-      <a class="explore-card orange-card" data-category="creative" href="#"><span>08 / CREATIVE</span><h2>Make something</h2><p>Crafts, photography, collecting, drawing — whatever you feel like trying.</p><b>Explore →</b></a>
-    </div>
-  </section>
-</main>
-<footer class="footer light-footer"><a class="wordmark" href="index.html">everything<span>hobbies</span></a><p>Everything you love. Worth talking about.</p><div><a href="about.html">About</a><a href="join.html">Join</a></div></footer>
-<script src="script.js"></script>
+
+    <p class="copyright">
+      © <span id="current-year"></span> Everything Hobbies.
+      Made for the things worth talking about.
+    </p>
+  </footer>
+
+  <script>
+    // Mobile navigation
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navigation.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? 'Close <span aria-hidden="true">−</span>'
+        : 'Menu <span aria-hidden="true">+</span>';
+    });
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML =
+          'Menu <span aria-hidden="true">+</span>';
+      });
+    });
+
+    // Interest filters
+
+    const filterButtons = document.querySelectorAll(".filter");
+    const interestCards = document.querySelectorAll(".explore-card");
+    const resultsCount = document.getElementById("results-count");
+    const emptyState = document.getElementById("empty-state");
+
+    function filterInterests(category) {
+      let visibleCount = 0;
+
+      interestCards.forEach(function (card) {
+        const matches =
+          category === "all" ||
+          card.dataset.category === category;
+
+        card.hidden = !matches;
+
+        if (matches) {
+          visibleCount++;
+        }
+      });
+
+      resultsCount.textContent =
+        visibleCount +
+        (visibleCount === 1 ? " interest world" : " interest worlds");
+
+      emptyState.style.display =
+        visibleCount === 0 ? "block" : "none";
+    }
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const selectedCategory = button.dataset.filter;
+
+        filterButtons.forEach(function (item) {
+          const isActive = item === button;
+
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+
+        filterInterests(selectedCategory);
+      });
+    });
+
+    // Footer year
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
