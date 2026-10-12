@@ -1,55 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Join Us | Everything Hobbies</title>
+  <title>Join the Community | Everything Hobbies</title>
 
   <meta
     name="description"
-    content="Join Everything Hobbies. Tell us what you love and stay in the loop as our community grows."
+    content="Join the Everything Hobbies community. Discover books, culture, films and new interests worth talking about."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --cream: #f5f0e7;
-      --paper: #faf7f0;
-      --burgundy: #681d24;
+      --cream: #F5F0E7;
+      --paper: #FAF7F0;
+      --burgundy: #681D24;
       --deep-burgundy: #481218;
-      --orange: #d77b3f;
-      --green: #53654b;
+      --orange: #D77B3F;
+      --olive: #53654B;
       --ink: #171513;
-      --muted: #756e67;
-      --border: #ded5c8;
-      --serif: "DM Serif Display", Georgia, serif;
-      --sans: "Inter", Arial, sans-serif;
+      --muted: #756E67;
+      --border: #DED5C8;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
-      margin: 0;
-      background: var(--paper);
+      background: var(--cream);
       color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
+      font-family: "Inter", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a {
@@ -57,823 +56,445 @@
       text-decoration: none;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* HEADER */
-
-    .join-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    .site-header {
       width: 100%;
-      min-height: 78px;
-      padding: 15px 6%;
+      padding: 25px 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      background: var(--paper);
+      gap: 24px;
       border-bottom: 1px solid var(--border);
     }
 
     .wordmark {
-      display: inline-block;
+      font-family: "DM Serif Display", serif;
+      font-size: 27px;
+      letter-spacing: -1px;
       color: var(--burgundy);
-      font-family: var(--serif);
-      font-size: 25px;
-      line-height: 1.1;
-      letter-spacing: -0.6px;
+      white-space: nowrap;
     }
 
-    .wordmark-tagline {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-
-    .back-link {
-      display: inline-flex;
+    .nav {
+      display: flex;
       align-items: center;
-      gap: 9px;
-      color: var(--burgundy);
-      font-size: 11px;
-      font-weight: 700;
+      justify-content: flex-end;
+      gap: 27px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
       transition: color 0.2s ease;
     }
 
-    .back-link:hover {
-      color: var(--orange);
+    .nav a:hover {
+      color: var(--burgundy);
     }
 
-    /* MAIN */
+    .nav .nav-cta {
+      color: var(--paper);
+      background: var(--burgundy);
+      padding: 12px 17px;
+      border-radius: 2px;
+    }
 
-    .join-wrapper {
+    .nav .nav-cta:hover {
+      background: var(--deep-burgundy);
+      color: white;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 7%;
+    }
+
+    .join-card {
       width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 76px 6% 100px;
+      max-width: 1050px;
+      min-height: 480px;
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      background: var(--paper);
+      border: 1px solid var(--border);
     }
 
-    /* INTRODUCTION */
-
-    .intro {
-      max-width: 900px;
-      margin-bottom: 65px;
+    .join-copy {
+      padding: 65px 58px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 24px;
-      color: var(--burgundy);
+      color: var(--olive);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
+      margin-bottom: 25px;
     }
 
     .eyebrow::before {
-      width: 27px;
-      height: 2px;
-      background: var(--orange);
       content: "";
-    }
-
-    .intro h1 {
-      max-width: 950px;
-      margin: 0;
-      color: var(--burgundy);
-      font-family: var(--serif);
-      font-size: clamp(51px, 8vw, 91px);
-      font-weight: 400;
-      line-height: 1.03;
-      letter-spacing: -1.8px;
-    }
-
-    .intro h1 em {
-      color: var(--orange);
-      font-weight: 400;
-    }
-
-    .intro-text {
-      max-width: 590px;
-      margin: 28px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    /* SIGNUP AREA */
-
-    .signup-area {
-      display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      border: 1px solid var(--border);
-      background: var(--cream);
-    }
-
-    .signup-side {
-      padding: 43px 35px;
-      background: var(--burgundy);
-      color: var(--paper);
-    }
-
-    .signup-number {
-      margin-bottom: 30px;
-      color: #e9a06a;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-    }
-
-    .signup-side h2 {
-      max-width: 300px;
-      margin: 0;
-      color: var(--paper);
-      font-family: var(--serif);
-      font-size: clamp(34px, 4vw, 48px);
-      font-weight: 400;
-      line-height: 1.13;
-    }
-
-    .side-accent {
-      width: 42px;
-      height: 3px;
-      margin: 25px 0;
-      background: var(--orange);
-    }
-
-    .signup-side p {
-      max-width: 280px;
-      margin: 0;
-      color: #eadbd3;
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .side-note {
-      margin-top: 45px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(250, 247, 240, 0.25);
-      color: #e9a06a;
-      font-family: var(--serif);
-      font-size: 19px;
-      line-height: 1.5;
-    }
-
-    /* FORM */
-
-    .signup-form {
-      min-width: 0;
-      padding: 43px 45px;
-    }
-
-    .form-heading {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .form-heading h3 {
-      margin: 0 0 7px;
-      color: var(--burgundy);
-      font-family: var(--serif);
-      font-size: 29px;
-      font-weight: 400;
-    }
-
-    .form-heading p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .field {
-      margin-bottom: 27px;
-    }
-
-    .field label,
-    .hobby-title {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--ink);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-
-    .field input[type="text"],
-    .field input[type="email"] {
-      display: block;
-      width: 100%;
-      min-height: 54px;
-      padding: 14px 15px;
-      border: 1px solid #cfc4b5;
-      border-radius: 2px;
-      outline: none;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 14px;
-      transition: border-color 0.2s ease;
-    }
-
-    .field input::placeholder {
-      color: #999087;
-    }
-
-    .field input:focus {
-      border-color: var(--burgundy);
-      box-shadow: 0 0 0 1px var(--burgundy);
-    }
-
-    /* HOBBY OPTIONS */
-
-    .hobbies {
-      margin-bottom: 31px;
-    }
-
-    .hobby-title {
-      margin-bottom: 14px;
-    }
-
-    .hobby-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .hobby-option {
-      position: relative;
-    }
-
-    .hobby-option input {
-      position: absolute;
-      width: 1px;
+      width: 24px;
       height: 1px;
-      overflow: hidden;
-      clip-path: inset(50%);
-      white-space: nowrap;
+      background: var(--olive);
     }
 
-    .hobby-option label {
+    h1 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(42px, 5vw, 65px);
+      line-height: 1.04;
+      letter-spacing: -1.7px;
+      font-weight: 400;
+      max-width: 490px;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      color: var(--burgundy);
+      font-weight: 400;
+    }
+
+    .intro {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .supporting-copy {
+      max-width: 420px;
+      font-size: 12px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    .instagram-button {
       display: inline-flex;
-      min-height: 39px;
       align-items: center;
       justify-content: center;
-      padding: 9px 14px;
-      border: 1px solid #cfc4b5;
-      border-radius: 2px;
-      background: var(--paper);
-      color: var(--muted);
-      font-size: 11px;
+      gap: 22px;
+      background: var(--burgundy);
+      color: white;
+      padding: 17px 21px;
+      font-size: 12px;
       font-weight: 600;
-      cursor: pointer;
-      transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .hobby-option label:hover {
-      border-color: var(--burgundy);
-      color: var(--burgundy);
-    }
-
-    .hobby-option input:checked + label {
-      border-color: var(--burgundy);
-      background: var(--burgundy);
-      color: var(--paper);
-    }
-
-    .hobby-option input:focus-visible + label {
-      outline: 2px solid var(--orange);
-      outline-offset: 3px;
-    }
-
-    /* SUBMIT BUTTON */
-
-    .submit-button {
-      display: flex;
-      width: 100%;
-      min-height: 56px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 16px 19px;
-      border: 1px solid var(--burgundy);
-      border-radius: 2px;
-      background: var(--burgundy);
-      color: var(--paper);
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .submit-button:hover {
-      border-color: var(--deep-burgundy);
+    .instagram-button:hover {
       background: var(--deep-burgundy);
+      transform: translateY(-2px);
     }
 
-    .submit-button:disabled {
-      cursor: wait;
-      opacity: 0.7;
-    }
-
-    .button-arrow {
-      color: #e9a06a;
-      font-size: 20px;
+    .instagram-button span {
+      font-size: 18px;
       line-height: 1;
     }
 
-    .form-note {
-      margin: 13px 0 0;
+    .small-note {
+      margin-top: 18px;
       color: var(--muted);
       font-size: 10px;
       line-height: 1.7;
-      text-align: center;
     }
 
-    /* FOOTER */
-
-    .join-footer {
-      padding: 42px 6% 25px;
-      background: var(--deep-burgundy);
+    .join-panel {
+      background: var(--burgundy);
       color: var(--paper);
+      padding: 50px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
     }
 
-    .footer-inner {
-      max-width: 1240px;
-      margin: 0 auto;
+    .panel-label {
+      color: #E7C8B7;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .panel-content {
+      position: relative;
+      z-index: 1;
+      padding: 35px 0;
+    }
+
+    .panel-content h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.13;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+
+    .panel-content p {
+      color: #E8DAD2;
+      font-size: 12px;
+      line-height: 1.9;
+      max-width: 290px;
+    }
+
+    .panel-bottom {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(250, 247, 240, 0.25);
+      padding-top: 20px;
+      color: #E8DAD2;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .panel-decoration {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -95px;
+      top: 95px;
+      border: 1px solid rgba(250, 247, 240, 0.17);
+      border-radius: 50%;
+    }
+
+    .panel-decoration::before,
+    .panel-decoration::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(250, 247, 240, 0.13);
+      border-radius: 50%;
+    }
+
+    .panel-decoration::after {
+      inset: 45px;
+    }
+
+    .site-footer {
+      padding: 23px 7%;
+      border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
-    .join-footer .wordmark {
-      color: var(--paper);
-    }
-
-    .join-footer .wordmark-tagline {
-      color: #d9c8c0;
+    .footer-tagline {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
     }
 
     .footer-links {
       display: flex;
+      gap: 20px;
       flex-wrap: wrap;
-      gap: 22px;
     }
 
     .footer-links a {
-      color: #eadbd3;
-      font-size: 11px;
-      transition: color 0.2s ease;
+      font-size: 10px;
+      font-weight: 600;
     }
 
     .footer-links a:hover {
-      color: #e9a06a;
+      color: var(--burgundy);
     }
 
-    .footer-bottom {
-      max-width: 1240px;
-      margin: 28px auto 0;
-      padding-top: 17px;
-      border-top: 1px solid rgba(250, 247, 240, 0.2);
-      color: #d9c8c0;
-      font-size: 10px;
-    }
-
-    /* RESPONSIVE DESIGN */
-
-    @media (max-width: 850px) {
-      .signup-area {
-        grid-template-columns: 0.8fr 1.2fr;
-      }
-
-      .signup-side {
-        padding: 34px 25px;
-      }
-
-      .signup-form {
-        padding: 34px 27px;
-      }
-
-      .side-note {
-        margin-top: 30px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .join-header {
-        min-height: 72px;
-        padding: 14px 5%;
-      }
-
-      .wordmark {
-        font-size: 22px;
-      }
-
-      .wordmark-tagline {
-        font-size: 8px;
-      }
-
-      .back-link {
-        font-size: 10px;
-      }
-
-      .join-wrapper {
-        padding: 58px 5% 70px;
-      }
-
-      .intro {
-        margin-bottom: 42px;
-      }
-
-      .intro h1 {
-        font-size: clamp(43px, 11.5vw, 64px);
-        letter-spacing: -1px;
-        line-height: 1.04;
-      }
-
-      .intro-text {
-        margin-top: 22px;
-        font-size: 14px;
-        line-height: 1.9;
-      }
-
-      .signup-area {
-        grid-template-columns: 1fr;
-      }
-
-      .signup-side {
-        padding: 29px 25px;
-      }
-
-      .signup-number {
-        margin-bottom: 19px;
-      }
-
-      .signup-side h2 {
-        max-width: 360px;
-        font-size: 38px;
-      }
-
-      .side-accent {
-        margin: 20px 0;
-      }
-
-      .signup-side p {
-        max-width: 420px;
-      }
-
-      .side-note {
-        margin-top: 24px;
-        padding-top: 16px;
-        font-size: 17px;
-      }
-
-      .signup-form {
-        padding: 30px 23px 28px;
-      }
-
-      .form-heading {
-        margin-bottom: 25px;
-      }
-
-      .field {
-        margin-bottom: 24px;
-      }
-
-      .field input[type="text"],
-      .field input[type="email"] {
-        min-height: 52px;
-        font-size: 14px;
-      }
-
-      .hobby-options {
-        gap: 8px;
-      }
-
-      .hobby-option label {
-        min-height: 38px;
-        padding: 9px 12px;
-        font-size: 11px;
-      }
-
-      .join-footer {
-        padding: 34px 5% 22px;
-      }
-
-      .footer-inner {
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 20px 6%;
         align-items: flex-start;
         flex-direction: column;
-        gap: 24px;
-      }
-
-      .footer-links {
         gap: 17px;
       }
 
-      .footer-bottom {
-        margin-top: 24px;
+      .wordmark {
+        font-size: 25px;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        gap: 17px;
+      }
+
+      .nav a {
+        font-size: 11px;
+      }
+
+      .nav .nav-cta {
+        padding: 9px 12px;
+      }
+
+      main {
+        padding: 35px 5%;
+      }
+
+      .join-card {
+        grid-template-columns: 1fr;
+      }
+
+      .join-copy {
+        padding: 42px 27px;
+      }
+
+      h1 {
+        font-size: 47px;
+      }
+
+      .join-panel {
+        min-height: 320px;
+        padding: 30px 27px;
+      }
+
+      .panel-content {
+        padding: 45px 0;
+      }
+
+      .panel-content h2 {
+        font-size: 39px;
+      }
+
+      .site-footer {
+        padding: 22px 6%;
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+    @media (max-width: 380px) {
+      .nav {
+        gap: 12px;
       }
 
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
+      .join-copy {
+        padding: 35px 21px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .join-panel {
+        padding: 27px 21px;
+      }
+
+      .instagram-button {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   </style>
 </head>
 
-<body>
+<body class="join-page">
 
-  <header class="join-header">
-    <a class="wordmark" href="index.html">
-      everything hobbies
-      <span class="wordmark-tagline">
-        Everything you love. Worth talking about.
-      </span>
-    </a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">everything hobbies</a>
 
-    <a class="back-link" href="index.html">
-      <span aria-hidden="true">←</span>
-      Back home
-    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="explore.html">Explore</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About Us</a>
+      <a class="nav-cta" href="join.html" aria-current="page">Join us ↗</a>
+    </nav>
   </header>
 
-  <main class="join-wrapper">
+  <main>
+    <section class="join-card">
 
-    <section class="intro">
-      <p class="eyebrow">You're invited</p>
+      <div class="join-copy">
+        <div class="eyebrow">Come as you are</div>
 
-      <h1>
-        Come for the hobbies.<br>
-        <em>Stay for the conversation.</em>
-      </h1>
+        <h1>
+          Find your people.<br>
+          Follow your <em>curiosity.</em>
+        </h1>
 
-      <p class="intro-text">
-        Everything Hobbies is a place for the things you love,
-        the things you're curious about, and the conversations
-        that make them better.
-      </p>
-    </section>
-
-    <section class="signup-area">
-
-      <div class="signup-side">
-        <div class="signup-number">01 / JOIN</div>
-
-        <h2>Let's get to know you.</h2>
-
-        <div class="side-accent"></div>
-
-        <p>
-          Tell us a little about yourself and what you're into.
-          We'll keep you in the loop as Everything Hobbies grows.
+        <p class="intro">
+          A good book, a film you cannot stop thinking about,
+          a new interest or a conversation that stays with you.
+          There is always something worth sharing.
         </p>
 
-        <div class="side-note">
-          Everything you love. Worth talking about.
-        </div>
+        <p class="supporting-copy">
+          Everything Hobbies is a space for curious minds and
+          people who love discovering more about the things
+          that make life interesting. Come and be part of it.
+        </p>
+
+        <a
+          class="instagram-button"
+          href="https://www.instagram.com/everythinghobbies/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Follow us on Instagram <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="small-note">
+          Your next favourite thing might be one post away.
+        </p>
       </div>
 
-      <form
-        class="signup-form"
-        id="everything-hobbies-signup"
-      >
+      <aside class="join-panel">
+        <div class="panel-decoration" aria-hidden="true"></div>
 
-        <div class="form-heading">
-          <h3>First things first.</h3>
-          <p>Tell us who you are and what you enjoy.</p>
+        <div class="panel-label">The Everything Hobbies community</div>
+
+        <div class="panel-content">
+          <h2>
+            Everything you love.<br>
+            Worth talking about.
+          </h2>
+
+          <p>
+            Books. Culture. Film. Creativity. The little things
+            that become big passions. Discover something new,
+            share what you love and stay curious with us.
+          </p>
         </div>
 
-        <div class="field">
-          <label for="name">Your name</label>
-
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="What should we call you?"
-            autocomplete="name"
-            required
-          >
+        <div class="panel-bottom">
+          A LITTLE MORE CURIOSITY. A LOT MORE CONNECTION.
         </div>
+      </aside>
 
-        <div class="field">
-          <label for="email">Email address</label>
-
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            autocomplete="email"
-            required
-          >
-        </div>
-
-        <div class="hobbies">
-          <span class="hobby-title">What are you into?</span>
-
-          <div class="hobby-options">
-
-            <div class="hobby-option">
-              <input
-                id="reading"
-                type="checkbox"
-                name="hobby"
-                value="Reading"
-              >
-              <label for="reading">Reading</label>
-            </div>
-
-            <div class="hobby-option">
-              <input
-                id="writing"
-                type="checkbox"
-                name="hobby"
-                value="Writing"
-              >
-              <label for="writing">Writing</label>
-            </div>
-
-            <div class="hobby-option">
-              <input
-                id="fashion"
-                type="checkbox"
-                name="hobby"
-                value="Fashion"
-              >
-              <label for="fashion">Fashion</label>
-            </div>
-
-            <div class="hobby-option">
-              <input
-                id="music"
-                type="checkbox"
-                name="hobby"
-                value="Music"
-              >
-              <label for="music">Music</label>
-            </div>
-
-            <div class="hobby-option">
-              <input
-                id="cooking"
-                type="checkbox"
-                name="hobby"
-                value="Cooking"
-              >
-              <label for="cooking">Cooking</label>
-            </div>
-
-            <div class="hobby-option">
-              <input
-                id="other"
-                type="checkbox"
-                name="hobby"
-                value="Other"
-              >
-              <label for="other">Other</label>
-            </div>
-
-          </div>
-        </div>
-
-        <button class="submit-button" type="submit">
-          <span>I'm in</span>
-          <span class="button-arrow" aria-hidden="true">→</span>
-        </button>
-
-        <p class="form-note">
-          No spam. Just launch news and good things.
-        </p>
-
-      </form>
     </section>
-
   </main>
 
-  <footer class="join-footer">
-    <div class="footer-inner">
+  <footer class="site-footer">
+    <p class="footer-tagline">
+      everything hobbies · Everything you love. Worth talking about.
+    </p>
 
-      <a class="wordmark" href="index.html">
-        everything hobbies
-        <span class="wordmark-tagline">
-          Everything you love. Worth talking about.
-        </span>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a
+        href="https://www.instagram.com/everythinghobbies/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
       </a>
-
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="explore.html">Explore</a>
-        <a href="books.html">Book Club</a>
-        <a href="journal.html">Journal</a>
-        <a href="about.html">About</a>
-      </nav>
-
-    </div>
-
-    <div class="footer-bottom">
-      © <span id="current-year"></span> Everything Hobbies.
-      Made for the things worth talking about.
+      <a href="index.html">Back to Home</a>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
-
-    const signupForm = document.getElementById(
-      "everything-hobbies-signup"
-    );
-
-    signupForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      const button = signupForm.querySelector(".submit-button");
-      const buttonText = button.querySelector("span:first-child");
-
-      button.disabled = true;
-      buttonText.textContent = "JOINING...";
-
-      const formData = new FormData(signupForm);
-
-      const data = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        hobby: formData.getAll("hobby")
-      };
-
-      try {
-        const response = await fetch(
-          "/.netlify/functions/signup",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          }
-        );
-
-        const responseText = await response.text();
-
-        if (!response.ok) {
-          throw new Error(
-            "Server returned " +
-            response.status +
-            ": " +
-            responseText
-          );
-        }
-
-        window.location.href = "join-success.html";
-
-      } catch (error) {
-        console.error("SIGNUP ERROR:", error);
-
-        button.disabled = false;
-        buttonText.textContent = "I'm in";
-
-        alert(
-          "Signup error:\n\n" +
-          error.message
-        );
-      }
-    });
-  </script>
 
 </body>
 </html>
