@@ -1,532 +1,795 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the Everything Hobbies book club, a space for readers to connect, explore stories and share ideas.">
-  <title>Books & Book Club | Everything Hobbies</title>
-
+  <title>Books & Reading | Everything Hobbies</title>
+  <meta
+    name="description"
+    content="Discover our reading list, explore thoughtful book recommendations and join the Everything Hobbies reading community."
+  >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <style>
     :root {
-      --cream: #f5f0e7;
-      --paper: #faf7f0;
+      --cream: #F5F0E7;
+      --paper: #FAF7F0;
+      --burgundy: #681D24;
+      --deep-burgundy: #481218;
+      --orange: #D77B3F;
+      --olive: #53654B;
       --ink: #171513;
-      --muted: #756e67;
-      --burgundy: #681d24;
-      --dark-burgundy: #481218;
-      --green: #53654b;
-      --orange: #d77b3f;
-      --line: #ded5c8;
+      --muted: #756E67;
+      --border: #DED5C8;
+      --white: #FFFFFF;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     html {
+      scroll-behaviour: smooth;
       scroll-behavior: smooth;
     }
-
     body {
-      background: var(--cream);
+      background: var(--paper);
       color: var(--ink);
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.75;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
-    button, input {
-      font: inherit;
+    img {
+      display: block;
+      max-width: 100%;
     }
-
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+    /* NAVIGATION */
     .site-header {
-      padding: 22px 7%;
-      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      min-height: 84px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
+      gap: 30px;
     }
-
-    .wordmark {
+    .brand {
       font-family: 'DM Serif Display', serif;
-      font-size: 25px;
-      line-height: 1.2;
-      letter-spacing: -0.8px;
+      font-size: 27px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: var(--burgundy);
+      white-space: nowrap;
     }
-
-    .wordmark span {
-      color: var(--orange);
-    }
-
     .nav-links {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: var(--ink);
       font-size: 12px;
       font-weight: 600;
-    }
-
-    .nav-links a {
       transition: color 0.2s ease;
     }
-
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--burgundy);
     }
-
-    .menu-toggle {
-      display: none;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--ink);
-      padding: 8px 12px;
-      cursor: pointer;
+    .nav-links .join-link {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 10px 17px;
+      border-radius: 2px;
     }
-
-    .hero {
-      padding: 95px 8% 85px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
+    .nav-links .join-link:hover {
+      background: var(--deep-burgundy);
+      color: var(--white);
     }
-
+    /* INTRODUCTION */
+    .page-intro {
+      padding: 83px 0 76px;
+      border-bottom: 1px solid var(--border);
+    }
     .eyebrow {
       color: var(--burgundy);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 19px;
     }
-
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: 'DM Serif Display', serif;
       font-weight: 400;
       line-height: 1.15;
     }
-
     h1 {
-      font-size: clamp(44px, 7vw, 78px);
-      letter-spacing: -1.8px;
-      max-width: 850px;
-      margin: 0 auto 22px;
+      max-width: 750px;
+      font-size: clamp(43px, 6.5vw, 76px);
+      letter-spacing: -1.7px;
+      margin-bottom: 22px;
     }
-
-    .hero p {
+    h1 em {
+      color: var(--burgundy);
+      font-weight: 400;
+    }
+    .intro-copy {
       max-width: 570px;
-      margin: 0 auto;
       color: var(--muted);
       font-size: 15px;
+      line-height: 1.9;
     }
-
-    .section {
-      padding: 75px 9%;
-    }
-
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 5vw, 48px);
-      margin-bottom: 16px;
-    }
-
-    .section-heading p,
-    .body-copy {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .intro-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 65px;
-      align-items: start;
-    }
-
-    .intro-copy h2 {
-      font-size: clamp(34px, 5vw, 48px);
-      margin-bottom: 20px;
-    }
-
-    .intro-copy p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .quote-panel {
-      background: var(--burgundy);
-      color: var(--paper);
-      padding: 38px;
-      min-height: 240px;
+    .intro-bottom {
+      margin-top: 38px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
     }
-
-    .quote-panel .quote-mark {
-      color: #e9b58d;
-      font-family: 'DM Serif Display', serif;
-      font-size: 54px;
-      line-height: 0.8;
-      margin-bottom: 18px;
+    .primary-link {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 13px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      transition: background 0.2s ease;
     }
-
-    .quote-panel p {
-      font-family: 'DM Serif Display', serif;
-      font-size: 25px;
-      line-height: 1.35;
+    .primary-link:hover {
+      background: var(--deep-burgundy);
     }
-
-    .quote-panel small {
-      margin-top: 20px;
-      color: #ead7cf;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+    .text-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--burgundy);
+      border-bottom: 1px solid var(--burgundy);
+      padding-bottom: 3px;
     }
-
+    /* READING LIST */
     .reading-section {
-      background: var(--paper);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      padding: 78px 0 90px;
     }
-
-    .reading-card {
-      border: 1px solid var(--line);
-      padding: 42px;
-      max-width: 850px;
-      margin-top: 30px;
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 43px;
     }
-
-    .reading-card .number {
-      font-family: 'DM Serif Display', serif;
-      color: var(--orange);
-      font-size: 36px;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .reading-card h3 {
-      font-size: 30px;
+    .section-heading h2 {
+      font-size: clamp(33px, 4vw, 46px);
+      letter-spacing: -0.8px;
       margin-bottom: 12px;
     }
-
-    .reading-card p {
+    .section-heading p {
       color: var(--muted);
-      font-size: 14px;
-      max-width: 600px;
+      font-size: 13px;
+      max-width: 470px;
     }
-
-    .steps {
+    .selection-note {
+      flex-shrink: 0;
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+    }
+    /* INDIVIDUAL BOOK CARDS */
+    .book-list {
+      border-top: 1px solid var(--border);
+    }
+    .book-card {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-      margin-top: 35px;
+      grid-template-columns: 225px minmax(0, 1fr);
+      gap: 47px;
+      padding: 43px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
     }
-
-    .step {
-      border-top: 1px solid var(--burgundy);
-      padding-top: 22px;
+    .book-visual {
+      width: 100%;
+      max-width: 225px;
+      margin: 0 auto;
     }
-
-    .step-number {
+    .cover-frame {
+      position: relative;
+      background: #E9DFD0;
+      padding: 15px;
+      overflow: hidden;
+    }
+    .cover-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(72, 18, 24, 0.08);
+      pointer-events: none;
+    }
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: contain;
+      object-position: center;
+      background: #E9DFD0;
+      box-shadow: 0 8px 22px rgba(23, 21, 19, 0.13);
+      transition: transform 0.3s ease;
+    }
+    .book-card:hover .book-cover {
+      transform: translateY(-3px);
+    }
+    .cover-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+    .book-info {
+      padding-top: 4px;
+    }
+    .book-number {
       color: var(--orange);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
-    }
-
-    .step h3 {
-      font-size: 24px;
+      letter-spacing: 2px;
       margin-bottom: 12px;
     }
-
-    .step p {
+    .genre {
+      display: inline-block;
+      background: #EEE5D9;
+      color: var(--burgundy);
+      padding: 5px 10px;
+      font-size: 9px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .book-info h3 {
+      font-size: clamp(28px, 3.3vw, 38px);
+      letter-spacing: -0.6px;
+      margin-bottom: 8px;
+    }
+    .author {
       color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 21px;
+    }
+    .book-description {
+      max-width: 690px;
       font-size: 13px;
+      line-height: 1.95;
+      margin-bottom: 23px;
     }
-
-    .join-section {
-      background: var(--green);
+    .discussion {
+      background: var(--cream);
+      border-left: 3px solid var(--olive);
+      padding: 19px 22px;
+      margin-top: 5px;
+    }
+    .discussion h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--olive);
+      margin-bottom: 12px;
+    }
+    .discussion ul {
+      padding-left: 17px;
+    }
+    .discussion li {
+      font-size: 12px;
+      line-height: 1.8;
+      margin-bottom: 7px;
+    }
+    .discussion li:last-child {
+      margin-bottom: 0;
+    }
+    .content-note {
+      font-size: 11px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 13px;
+    }
+    /* READING COMMUNITY */
+    .community {
+      background: var(--burgundy);
       color: var(--paper);
-      padding: 75px 9%;
-      text-align: center;
+      padding: 76px 0;
     }
-
-    .join-section .eyebrow {
-      color: #e9c49f;
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      align-items: center;
+      gap: 55px;
     }
-
-    .join-section h2 {
-      font-size: clamp(36px, 5vw, 52px);
+    .community .eyebrow {
+      color: #E7B18A;
+    }
+    .community h2 {
+      max-width: 590px;
+      font-size: clamp(37px, 5vw, 56px);
+      letter-spacing: -1px;
       margin-bottom: 18px;
     }
-
-    .join-section p {
-      max-width: 530px;
-      margin: 0 auto 28px;
-      color: #e4e7df;
-      font-size: 14px;
+    .community-copy {
+      max-width: 540px;
+      color: #E8D8D2;
+      font-size: 13px;
+      line-height: 1.9;
     }
-
-    .join-link {
+    .community-action {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .community-button {
       display: inline-block;
       background: var(--paper);
-      color: var(--green);
-      padding: 13px 23px;
-      font-size: 12px;
+      color: var(--burgundy);
+      padding: 14px 20px;
+      font-size: 11px;
       font-weight: 700;
-      transition: background 0.2s ease;
     }
-
-    .join-link:hover {
-      background: #eadfce;
+    .community-button:hover {
+      background: #E9DFD0;
     }
-
+    .community-small {
+      font-size: 10px;
+      color: #E8D8D2;
+    }
+    /* FOOTER */
     .site-footer {
-      padding: 30px 7%;
+      background: var(--paper);
+      padding: 29px 0;
+    }
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      font-size: 11px;
-      color: var(--muted);
+      gap: 20px;
     }
-
-    .footer-name {
+    .footer-brand {
       font-family: 'DM Serif Display', serif;
       font-size: 19px;
-      color: var(--ink);
+      color: var(--burgundy);
     }
-
+    .footer-tagline,
+    .copyright {
+      color: var(--muted);
+      font-size: 10px;
+    }
+    .footer-right {
+      text-align: right;
+    }
+    .footer-right a {
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    /* MOBILE */
     @media (max-width: 760px) {
-      .site-header {
-        padding: 20px 6%;
-        flex-wrap: wrap;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
+      .nav {
+        min-height: auto;
+        padding: 22px 0 17px;
         align-items: flex-start;
-        gap: 16px;
-        padding: 10px 0;
+        flex-direction: column;
+        gap: 19px;
       }
-
-      .nav-links.open {
-        display: flex;
+      .brand {
+        font-size: 25px;
       }
-
-      .hero {
-        padding: 70px 7%;
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 13px 19px;
       }
-
-      .section {
-        padding: 55px 7%;
+      .nav-links a {
+        font-size: 11px;
       }
-
-      .intro-layout {
+      .nav-links .join-link {
+        padding: 7px 11px;
+      }
+      .page-intro {
+        padding: 57px 0 52px;
+      }
+      .intro-copy {
+        font-size: 14px;
+      }
+      .reading-section {
+        padding: 55px 0 65px;
+      }
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .book-card {
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 20px;
+        padding: 29px 0;
+      }
+      .book-visual {
+        max-width: 118px;
+      }
+      .cover-frame {
+        padding: 7px;
+      }
+      .cover-caption {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+        margin-top: 9px;
+      }
+      .book-number {
+        font-size: 10px;
+        margin-bottom: 9px;
+      }
+      .genre {
+        font-size: 8px;
+        padding: 4px 7px;
+        margin-bottom: 11px;
+      }
+      .book-info h3 {
+        font-size: 24px;
+        letter-spacing: -0.4px;
+      }
+      .author {
+        font-size: 11px;
+        margin-bottom: 13px;
+      }
+      .book-description {
+        font-size: 12px;
+        line-height: 1.8;
+        margin-bottom: 17px;
+      }
+      .discussion {
+        padding: 15px 13px;
+      }
+      .discussion h4 {
+        font-size: 9px;
+      }
+      .discussion li {
+        font-size: 11px;
+      }
+      .community {
+        padding: 55px 0;
+      }
+      .community-inner {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 29px;
       }
-
-      .quote-panel {
-        padding: 30px;
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
-
-      .reading-card {
-        padding: 28px;
+      .footer-right {
+        text-align: left;
       }
-
-      .steps {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    }
+    @media (max-width: 390px) {
+      .container {
+        width: 92%;
       }
-
-      .join-section {
-        padding: 60px 7%;
+      .book-card {
+        grid-template-columns: 98px minmax(0, 1fr);
+        gap: 15px;
       }
-
-      .site-footer {
-        padding: 25px 7%;
+      .book-visual {
+        max-width: 98px;
+      }
+      .book-info h3 {
+        font-size: 21px;
+      }
+      .book-description {
+        font-size: 11px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
-
 <body>
+  <!-- NAVIGATION -->
   <header class="site-header">
-    <a class="wordmark" href="index.html">everything hobbies<span>.</span></a>
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="main-navigation"
-    >
-      Menu
-    </button>
-
-    <nav class="nav-links" id="main-navigation">
-      <a href="index.html">Home</a>
-      <a href="explore.html">Explore</a>
-      <a href="books.html" class="active">Books</a>
-      <a href="journal.html">Journal</a>
-      <a href="about.html">About</a>
-      <a href="join.html">Join us</a>
-    </nav>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        everything hobbies
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="books.html" class="active">Books</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="index.html#community" class="join-link">Join us</a>
+      </nav>
+    </div>
   </header>
-
+  <!-- PAGE INTRODUCTION -->
   <main>
-    <section class="hero">
-      <div class="eyebrow">The reading room</div>
-      <h1>Stories worth sitting with.</h1>
-      <p>
-        A space for good books, thoughtful conversations and the stories
-        that stay with us long after the last page.
-      </p>
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow">The reading room</p>
+        <h1>
+          Some stories stay<br>
+          with you <em>long after.</em>
+        </h1>
+        <p class="intro-copy">
+          A good book gives you somewhere to go, something to feel
+          and something to think about. Our reading list brings
+          together stories worth sitting with, talking about and
+          sharing with someone else.
+        </p>
+        <div class="intro-bottom">
+          <a href="#our-reading-list" class="primary-link">
+            EXPLORE THE READING LIST
+          </a>
+          <a
+            href="https://www.instagram.com/everythinghobbies/"
+            class="text-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            READ WITH US ON INSTAGRAM ↗
+          </a>
+        </div>
+      </div>
     </section>
-
-    <section class="section">
-      <div class="intro-layout">
-        <div class="intro-copy">
-          <div class="eyebrow">A little about us</div>
-          <h2>More than just a reading list.</h2>
-          <p>
-            The Everything Hobbies Book Club is for people who love getting
-            lost in a story, discovering a new perspective and sharing what
-            a book made them feel or think about.
-          </p>
-          <p>
-            From fiction and contemporary literature to memoirs and
-            unexpected discoveries, this is a space to read at your own
-            pace and connect through the stories we choose.
-          </p>
-          <p>
-            Our reading list is still taking shape. We want the books we
-            feature to be chosen with care, so the final selections will
-            be shared here once they are ready.
+    <!-- READING LIST -->
+    <section class="reading-section" id="our-reading-list">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Four books to begin with</p>
+            <h2>On our reading list.</h2>
+            <p>
+              Different worlds, complicated characters and stories
+              that leave room for conversation.
+            </p>
+          </div>
+          <span class="selection-note">
+            Our selected reads · 01–04
+          </span>
+        </div>
+        <div class="book-list">
+          <!-- BOOK 01 -->
+          <article class="book-card">
+            <div class="book-visual">
+              <div class="cover-frame">
+                <img
+                  class="book-cover"
+                  src="https://books.google.com/books/content?id=VnAgAQAAIAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+                  alt="Cover of Parable of the Sower by Octavia E. Butler"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                >
+              </div>
+              <p class="cover-caption">The speculative read</p>
+            </div>
+            <div class="book-info">
+              <p class="book-number">01 / THE READING LIST</p>
+              <span class="genre">Science fiction · Dystopian</span>
+              <h3>Parable of the Sower</h3>
+              <p class="author">Octavia E. Butler</p>
+              <p class="book-description">
+                Set in a society unravelled by inequality, violence
+                and environmental collapse, this novel follows
+                Lauren Olamina as she searches for a way to survive
+                and imagines a different future. Butler's story
+                explores belief, community, power and what it takes
+                to keep going when the world around you changes.
+              </p>
+              <div class="discussion">
+                <h4>Things to think about</h4>
+                <ul>
+                  <li>What makes a community worth protecting?</li>
+                  <li>Can a new belief system offer hope without becoming another form of control?</li>
+                  <li>How does Lauren's understanding of change shape the choices she makes?</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <!-- BOOK 02 -->
+          <article class="book-card">
+            <div class="book-visual">
+              <div class="cover-frame">
+                <img
+                  class="book-cover"
+                  src="https://books.google.com/books/content?id=lzSMzgEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+                  alt="Cover of Seven Days in June by Tia Williams"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                >
+              </div>
+              <p class="cover-caption">The romance read</p>
+            </div>
+            <div class="book-info">
+              <p class="book-number">02 / THE READING LIST</p>
+              <span class="genre">Romance · Contemporary fiction</span>
+              <h3>Seven Days in June</h3>
+              <p class="author">Tia Williams</p>
+              <p class="book-description">
+                Eva Mercy and Shane Hall have a history that neither
+                has quite managed to leave behind. Fifteen years
+                after their intense teenage romance, the two writers
+                find themselves unexpectedly reunited. What follows
+                is a story about second chances, creative ambition,
+                old wounds and the complicated ways people learn
+                to love each other as adults.
+              </p>
+              <div class="discussion">
+                <h4>Things to think about</h4>
+                <ul>
+                  <li>Can two people reconnect without repeating the patterns that hurt them?</li>
+                  <li>How do past experiences influence the way we receive love?</li>
+                  <li>What is the difference between chemistry and compatibility?</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <!-- BOOK 03 -->
+          <article class="book-card">
+            <div class="book-visual">
+              <div class="cover-frame">
+                <img
+                  class="book-cover"
+                  src="https://books.google.com/books/content?id=gkeTEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+                  alt="Cover of Purple Hibiscus by Chimamanda Ngozi Adichie"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                >
+              </div>
+              <p class="cover-caption">The literary read</p>
+            </div>
+            <div class="book-info">
+              <p class="book-number">03 / THE READING LIST</p>
+              <span class="genre">African literature · Coming of age</span>
+              <h3>Purple Hibiscus</h3>
+              <p class="author">Chimamanda Ngozi Adichie</p>
+              <p class="book-description">
+                In Nigeria, fifteen-year-old Kambili grows up in a
+                home where silence and strict expectations shape
+                everyday life. A visit to her aunt's household
+                introduces her to a different kind of freedom.
+                Through family, faith, political unrest and the
+                search for a voice of her own, Adichie examines
+                what happens when obedience and love become
+                difficult to tell apart.
+              </p>
+              <div class="discussion">
+                <h4>Things to think about</h4>
+                <ul>
+                  <li>How does silence function as both protection and control?</li>
+                  <li>What changes when Kambili encounters a different way of living?</li>
+                  <li>How can love exist alongside fear, and what does that cost a family?</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <!-- BOOK 04 -->
+          <article class="book-card">
+            <div class="book-visual">
+              <div class="cover-frame">
+                <img
+                  class="book-cover"
+                  src="https://books.google.com/books/content?id=83i_swEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+                  alt="Cover of BARE: The Blesser's Game by Jackie Phamotse"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                >
+              </div>
+              <p class="cover-caption">The South African read</p>
+            </div>
+            <div class="book-info">
+              <p class="book-number">04 / THE READING LIST</p>
+              <span class="genre">South African fiction · Social thriller</span>
+              <h3>BARE: The Blesser's Game</h3>
+              <p class="author">Jackie Phamotse</p>
+              <p class="book-description">
+                Set against the pursuit of wealth, status and
+                visibility in Johannesburg, this novel follows
+                Treasure as she navigates a world where luxury
+                comes with expectations and relationships can
+                carry hidden costs. Phamotse explores ambition,
+                exploitation, social pressure and the price of
+                wanting a life that looks perfect from the outside.
+              </p>
+              <div class="discussion">
+                <h4>Things to think about</h4>
+                <ul>
+                  <li>What does the pursuit of status ask people to sacrifice?</li>
+                  <li>How do money and power influence relationships?</li>
+                  <li>Where should we draw the line between ambition and self-preservation?</li>
+                </ul>
+              </div>
+              <p class="content-note">
+                Content note: explores exploitation, coercive relationships
+                and difficult social realities.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- COMMUNITY CTA -->
+    <section class="community" id="community">
+      <div class="container community-inner">
+        <div>
+          <p class="eyebrow">The conversation continues</p>
+          <h2>Read something.<br>Feel something.<br>Talk about it.</h2>
+          <p class="community-copy">
+            Everything Hobbies is about the things that bring us
+            together. Follow along for reading recommendations,
+            conversations and more things worth talking about.
           </p>
         </div>
-
-        <aside class="quote-panel">
-          <div class="quote-mark">“</div>
-          <p>A good story gives you something to think about, and someone to talk to.</p>
-          <small>Everything Hobbies Book Club</small>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section reading-section">
-      <div class="section-heading">
-        <div class="eyebrow">Coming together</div>
-        <h2>Our reading list.</h2>
-        <p>
-          We are putting together a thoughtful selection of books across
-          different genres. The titles will appear here once the shortlist
-          has been reviewed and finalised.
-        </p>
-      </div>
-
-      <div class="reading-card">
-        <div class="number">01</div>
-        <h3>The next chapter starts here.</h3>
-        <p>
-          The book selections are being curated. In the meantime, this is
-          where you will find our chosen reads, what we are discussing and
-          how to take part in the book club.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="eyebrow">How it works</div>
-        <h2>Read. Reflect. Connect.</h2>
-        <p>
-          A book club should make reading more enjoyable, not feel like
-          another deadline. Here is the idea behind ours.
-        </p>
-      </div>
-
-      <div class="steps">
-        <article class="step">
-          <div class="step-number">01 / DISCOVER</div>
-          <h3>Find your next read.</h3>
-          <p>
-            Explore the books selected for the club and discover stories
-            you might not have picked up on your own.
+        <div class="community-action">
+          <a
+            href="https://www.instagram.com/everythinghobbies/"
+            class="community-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN THE CONVERSATION ↗
+          </a>
+          <p class="community-small">
+            Find us on Instagram · @everythinghobbies
           </p>
-        </article>
-
-        <article class="step">
-          <div class="step-number">02 / READ</div>
-          <h3>Take your time.</h3>
-          <p>
-            Read at a pace that works for you. The point is to enjoy the
-            experience and make room for the story.
-          </p>
-        </article>
-
-        <article class="step">
-          <div class="step-number">03 / CONNECT</div>
-          <h3>Share your thoughts.</h3>
-          <p>
-            Join the conversation, exchange perspectives and hear what
-            other readers took away from the same book.
-          </p>
-        </article>
+        </div>
       </div>
-    </section>
-
-    <section class="join-section">
-      <div class="eyebrow">Your seat is waiting</div>
-      <h2>Come read with us.</h2>
-      <p>
-        Love books, thoughtful conversations or simply finding your next
-        favourite story? We would love to have you in the community.
-      </p>
-      <a class="join-link" href="join.html">Join the community</a>
     </section>
   </main>
-
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <a class="footer-name" href="index.html">everything hobbies</a>
-    <p>Everything you love. Worth talking about.</p>
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">everything hobbies</p>
+        <p class="footer-tagline">
+          Everything you love. Worth talking about.
+        </p>
+      </div>
+      <div class="footer-right">
+        <p class="copyright">
+          © 2026 Everything Hobbies
+        </p>
+        <a
+          href="https://www.instagram.com/everythinghobbies/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FOLLOW ALONG ↗
+        </a>
+      </div>
+    </div>
   </footer>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navigation = document.querySelector('#main-navigation');
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navigation.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-  </script>
 </body>
 </html>
