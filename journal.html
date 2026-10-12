@@ -1,357 +1,310 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-  <meta
-    name="description"
-    content="The Everything Hobbies Journal. Books, culture, music, film, ideas and everything worth talking about."
-  >
-  <title>The Journal — Everything Hobbies</title>
-  <!-- GOOGLE FONTS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f4ec">
+  <title>The Journal | everything hobbies</title>
+  <meta name="description" content="Ideas, recommendations and conversations about everything you love.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f8f4ec;
+      color: #25251f;
+      font-family: Inter, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      padding: 22px 6%;
+      border-bottom: 1px solid #ded8cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: "DM Serif Display", serif;
+      font-size: 25px;
+      text-transform: lowercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .nav a:hover { color: #702d3b; }
+
+    .hero {
+      padding: 76px 6% 54px;
+      max-width: 1000px;
+    }
+
+    .eyebrow {
+      color: #702d3b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.02;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      max-width: 550px;
+      line-height: 1.8;
+      color: #666258;
+      font-size: 15px;
+    }
+
+    .controls {
+      padding: 0 6% 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .controls input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px;
+      border: 1px solid #d7d0c4;
+      background: #fffdf8;
+      color: #25251f;
+      border-radius: 2px;
+      font: inherit;
+    }
+
+    .controls input:focus {
+      outline: 2px solid #702d3b;
+      outline-offset: 2px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filters button {
+      padding: 12px 16px;
+      border: 1px solid #d7d0c4;
+      background: #f0e6d6;
+      color: #25251f;
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .filters button.active,
+    .filters button:hover {
+      background: #702d3b;
+      color: #fffaf4;
+      border-color: #702d3b;
+    }
+
+    .grid {
+      padding: 0 6% 80px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px 20px;
+    }
+
+    .card {
+      background: #f1e8da;
+      border-top: 3px solid #702d3b;
+      padding: 24px 22px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      background: #fffaf3;
+      transform: translateY(-3px);
+    }
+
+    .card .category {
+      color: #702d3b;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      color: #25251f;
+      font-size: 28px;
+      line-height: 1.15;
+      margin: 16px 0 12px;
+    }
+
+    .card p {
+      color: #514d45;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .read {
+      display: inline-block;
+      margin-top: 12px;
+      color: #25251f;
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid #702d3b;
+      padding-bottom: 5px;
+    }
+
+    .read:hover { color: #702d3b; }
+
+    .empty {
+      display: none;
+      padding: 0 6% 70px;
+      color: #514d45;
+    }
+
+    footer {
+      padding: 28px 6%;
+      border-top: 1px solid #ded8cc;
+      font-size: 12px;
+      color: #514d45;
+    }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding-top: 55px; }
+    }
+
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .controls { flex-direction: column; }
+      .controls input { width: 100%; }
+    }
+  </style>
 </head>
+
 <body>
-<!-- =====================================================
-     HEADER
-===================================================== -->
-<header class="site-header solid">
-  <a
-    class="wordmark"
-    href="index.html"
-  >
-    everything <span>hobbies</span>
-  </a>
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    type="button"
-    aria-label="Open menu"
-    aria-expanded="false"
-  >
-    <span></span>
-    <span></span>
-  </button>
-  <nav
-    class="nav"
-    id="nav"
-  >
-    <a href="index.html#bookclub">
-      Book Club
-    </a>
-    <a
-      class="active"
-      href="journal.html"
-    >
-      Journal
-    </a>
-    <a href="index.html#coming-soon">
-      Coming Soon
-    </a>
-    <a href="about.html">
-      About
-    </a>
-    <a
-      class="nav-cta"
-      href="join.html"
-    >
-      Join us
-    </a>
-  </nav>
-</header>
-<main>
-<!-- =====================================================
-     JOURNAL HERO
-===================================================== -->
-<section class="journal-page-hero">
-  <div class="journal-page-hero-inner">
-    <div class="journal-hero-top">
-      <p class="eyebrow">
-        The Everything Hobbies Journal
-      </p>
-      <span class="journal-issue">
-        Issue No. 01
-      </span>
-    </div>
-    <h1>
-      Things worth<br>
-      <em>talking about.</em>
-    </h1>
-    <div class="journal-hero-bottom">
-      <p>
-        Books, music, culture, film, ideas and the
-        wonderfully unnecessary things we find ourselves
-        thinking about.
-      </p>
-      <span class="journal-arrow">
-        ↓
-      </span>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     CATEGORY NAVIGATION
-===================================================== -->
-<section class="journal-categories">
-  <div class="journal-categories-inner">
-    <p class="eyebrow dark">
-      Browse by interest
-    </p>
-    <div class="category-filter">
-      <button
-        type="button"
-        class="category-filter-button active"
-        data-category-filter="All"
-      >
-        All
-      </button>
-      <button
-        type="button"
-        class="category-filter-button"
-        data-category-filter="Books"
-      >
-        Books
-      </button>
-      <button
-        type="button"
-        class="category-filter-button"
-        data-category-filter="Culture"
-      >
-        Culture
-      </button>
-      <button
-        type="button"
-        class="category-filter-button"
-        data-category-filter="Music"
-      >
-        Music
-      </button>
-      <button
-        type="button"
-        class="category-filter-button"
-        data-category-filter="Film & TV"
-      >
-        Film & TV
-      </button>
-      <button
-        type="button"
-        class="category-filter-button"
-        data-category-filter="Life & Ideas"
-      >
-        Life & Ideas
-      </button>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     FEATURED
-===================================================== -->
-<section class="journal-featured">
-  <div class="journal-container">
-    <div class="journal-section-label">
-      <p class="eyebrow dark">
-        Start here
-      </p>
-      <span>
-        Featured story
-      </span>
-    </div>
-    <div id="featuredArticle">
-      <p class="journal-loading">
-        Loading the latest story...
-      </p>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     LATEST STORIES
-===================================================== -->
-<section class="journal-latest">
-  <div class="journal-container">
-    <div class="journal-latest-heading">
-      <div>
-        <p class="eyebrow dark">
-          The latest
-        </p>
-        <h2>
-          Pull up a chair.<br>
-          <em>Stay a while.</em>
-        </h2>
+  <header class="topbar">
+    <a class="brand" href="index.html">everything hobbies</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="journal.html">Journal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">The everything hobbies journal</div>
+      <h1>Everything<br>worth talking about.</h1>
+      <p>A little inspiration for the things you love. Explore recommendations, discover new interests and find your next conversation starter.</p>
+    </section>
+
+    <section class="controls" aria-label="Search and filter articles">
+      <input id="search" type="search" placeholder="Search the journal..." aria-label="Search articles">
+
+      <div class="filters">
+        <button class="active" data-filter="All" aria-pressed="true">All</button>
+        <button data-filter="Books" aria-pressed="false">Books</button>
+        <button data-filter="Culture" aria-pressed="false">Culture</button>
+        <button data-filter="Lifestyle" aria-pressed="false">Lifestyle</button>
       </div>
-      <p>
-        A running collection of things we're reading,
-        watching, listening to and thinking about.
-      </p>
-    </div>
-    <div
-      class="article-grid"
-      id="articleGrid"
-    >
-      <p class="journal-loading">
-        Loading stories...
-      </p>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     MID-PAGE STATEMENT
-===================================================== -->
-<section class="journal-statement">
-  <div class="journal-statement-inner">
-    <p class="eyebrow">
-      A note from the journal
-    </p>
-    <h2>
-      You don't need<br>
-      a reason to be<br>
-      <em>interested.</em>
-    </h2>
-    <p>
-      Not everything has to become a skill.
-      Not every interest needs a purpose.
-      Sometimes you can simply like something
-      because you like it.
-    </p>
-  </div>
-</section>
-<!-- =====================================================
-     MORE TO COME
-===================================================== -->
-<section class="journal-more section">
-  <div class="journal-more-heading">
-    <p class="eyebrow dark">
-      And we're only getting started
-    </p>
-    <h2>
-      More things.<br>
-      <em>More conversations.</em>
-    </h2>
-  </div>
-  <div class="journal-topics">
-    <div class="journal-topic">
-      <span>
-        01
-      </span>
-      <h3>
-        Books
-      </h3>
-      <p>
-        What we're reading,
-        loving and arguing about.
-      </p>
-    </div>
-    <div class="journal-topic">
-      <span>
-        02
-      </span>
-      <h3>
-        Music
-      </h3>
-      <p>
-        Songs, albums, playlists
-        and everything in between.
-      </p>
-    </div>
-    <div class="journal-topic">
-      <span>
-        03
-      </span>
-      <h3>
-        Culture
-      </h3>
-      <p>
-        The little and big things
-        shaping the way we see the world.
-      </p>
-    </div>
-    <div class="journal-topic">
-      <span>
-        04
-      </span>
-      <h3>
-        Life & Ideas
-      </h3>
-      <p>
-        Thoughts, observations
-        and everyday rabbit holes.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     JOIN CTA
-===================================================== -->
-<section class="journal-join">
-  <div>
-    <p class="eyebrow">
-      Stay curious
-    </p>
-    <h2>
-      Come for the<br>
-      <em>conversation.</em>
-    </h2>
-    <p>
-      Join the Everything Hobbies list and be here
-      for what's next.
-    </p>
-    <a
-      href="join.html"
-      class="button button-light"
-    >
-      Join the list
-      <span>→</span>
-    </a>
-  </div>
-</section>
-</main>
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-<footer class="footer">
-  <a
-    class="wordmark"
-    href="index.html"
-  >
-    everything <span>hobbies</span>
-  </a>
-  <p>
-    Everything you love.<br>
-    Worth talking about.
-  </p>
-  <div class="footer-links">
-    <a href="index.html#bookclub">
-      Book Club
-    </a>
-    <a href="journal.html">
-      Journal
-    </a>
-    <a href="index.html#coming-soon">
-      Coming soon
-    </a>
-    <a href="about.html">
-      About
-    </a>
-    <a href="join.html">
-      Join
-    </a>
-  </div>
-</footer>
-<script src="script.js"></script>
+    </section>
+
+    <section class="grid" id="articles">
+      <article class="card" data-category="Books">
+        <div class="category">Books</div>
+        <h2>Finding your next favourite read</h2>
+        <p>Sometimes the best book is the one you didn't know you needed. Here's how to discover stories that stay with you.</p>
+        <a class="read" href="article.html?post=next-read">Read the article ↗</a>
+      </article>
+
+      <article class="card" data-category="Culture">
+        <div class="category">Culture</div>
+        <h2>Why shared interests bring us together</h2>
+        <p>From music to films, the things we love can become the beginning of meaningful conversations and connections.</p>
+        <a class="read" href="article.html?post=shared-interests">Read the article ↗</a>
+      </article>
+
+      <article class="card" data-category="Lifestyle">
+        <div class="category">Lifestyle</div>
+        <h2>Making room for what you love</h2>
+        <p>A gentle reminder that hobbies don't need to become a side hustle. Sometimes joy is reason enough.</p>
+        <a class="read" href="article.html?post=make-room">Read the article ↗</a>
+      </article>
+    </section>
+
+    <p class="empty" id="empty">No articles found. Try another search.</p>
+  </main>
+
+  <footer>everything hobbies. Everything you love. Worth talking about.</footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.card')];
+    const buttons = [...document.querySelectorAll('[data-filter]')];
+    const empty = document.getElementById('empty');
+    let category = 'All';
+
+    function updateArticles() {
+      const query = search.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchesCategory =
+          category === 'All' || card.dataset.category === category;
+        const matchesSearch =
+          card.innerText.toLowerCase().includes(query);
+
+        card.style.display =
+          matchesCategory && matchesSearch ? '' : 'none';
+
+        if (matchesCategory && matchesSearch) visible++;
+      });
+
+      empty.style.display = visible ? 'none' : 'block';
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        category = button.dataset.filter;
+
+        buttons.forEach(item => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+
+        updateArticles();
+      });
+    });
+
+    search.addEventListener('input', updateArticles);
+  </script>
 </body>
 </html>
