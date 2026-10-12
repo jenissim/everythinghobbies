@@ -1,257 +1,260 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-  <meta
-    name="description"
-    content="Everything Hobbies Journal — things worth reading, watching, listening to and thinking about."
-  >
-  <title>Article — Everything Hobbies</title>
-  <!-- GOOGLE FONTS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Good Things Take Time | everything hobbies</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #f8f4ec;
+      --card-cream: #f1e8da;
+      --green: #293c30;
+      --burgundy: #702d3b;
+      --orange: #bd593b;
+      --ink: #25251f;
+      --muted: #68695f;
+      --line: #ded8ca;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      padding: 24px 7%;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      font: 28px 'DM Serif Display', serif;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    header a.back {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    header a.back:hover {
+      color: var(--burgundy);
+    }
+
+    main {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      line-height: 1.8;
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+
+    h1 {
+      font: clamp(42px, 8vw, 76px)/1.08 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+      max-width: 470px;
+      margin: 0 auto 32px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--burgundy);
+      color: #fffaf4;
+      padding: 15px 25px;
+      border: 1px solid var(--burgundy);
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--cream);
+      color: var(--burgundy);
+    }
+
+    .secondary-link {
+      display: block;
+      width: fit-content;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .secondary-link:hover {
+      color: var(--burgundy);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin: 0 7%;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    footer .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      header a.back {
+        font-size: 11px;
+      }
+
+      main {
+        min-height: 68vh;
+        padding: 65px 22px;
+      }
+
+      h1 {
+        letter-spacing: -0.5px;
+      }
+
+      footer {
+        margin: 0 5%;
+        line-height: 1.8;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<!-- =====================================================
-     HEADER
-===================================================== -->
-<header class="site-header solid">
-  <a
-    class="wordmark"
-    href="index.html"
-  >
-    everything <span>hobbies</span>
-  </a>
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    type="button"
-    aria-label="Open menu"
-    aria-expanded="false"
-  >
-    <span></span>
-    <span></span>
-  </button>
-  <nav
-    class="nav"
-    id="nav"
-  >
-    <a href="index.html#bookclub">
-      Book Club
-    </a>
-    <a
-      href="journal.html"
-    >
-      Journal
-    </a>
-    <a href="index.html#coming-soon">
-      Coming Soon
-    </a>
-    <a href="about.html">
-      About
-    </a>
-    <a
-      class="nav-cta"
-      href="join.html"
-    >
-      Join us
-    </a>
-  </nav>
-</header>
-<main>
-<!-- =====================================================
-     ARTICLE
-===================================================== -->
-<article
-  class="article-page"
-  id="articlePage"
->
-<!-- =====================================================
-     ARTICLE INTRO
-===================================================== -->
-<section class="article-intro">
-  <div class="article-intro-inner">
-    <a
-      href="journal.html"
-      class="back-to-journal"
-    >
-      ← Back to Journal
-    </a>
-    <div class="article-heading">
-      <p
-        class="article-category"
-        id="articleCategory"
-      >
-        Books
+  <header>
+    <a class="logo" href="index.html">everything hobbies</a>
+    <a class="back" href="journal.html">Back to Journal</a>
+  </header>
+
+  <main>
+    <section class="content">
+      <p class="eyebrow" id="article-category">
+        A little something is in the works
       </p>
-      <h1 id="articleTitle">
-        Loading article...
-      </h1>
-      <p
-        class="article-excerpt"
-        id="articleExcerpt"
-      ></p>
-      <div class="article-meta">
-        <span id="articleDate"></span>
-        <span class="meta-divider">
-          /
-        </span>
-        <span id="articleReadingTime"></span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     FEATURE IMAGE
-===================================================== -->
-<section class="article-feature-image">
-  <div class="article-image-frame">
-    <img
-      id="articleImage"
-      src=""
-      alt=""
-    >
-  </div>
-</section>
-<!-- =====================================================
-     ARTICLE BODY
-===================================================== -->
-<section class="article-reading">
-  <div class="article-reading-inner">
-    <!-- SHARE -->
-    <aside class="article-sidebar">
-      <p class="eyebrow dark">
-        Share
+
+      <h1 id="article-title">Good things take time.</h1>
+
+      <p class="description" id="article-description">
+        We're putting the finishing touches on this story.
+        In the meantime, explore the things we love, discover
+        something new and find your next favourite read.
       </p>
-      <button
-        type="button"
-        id="copyArticleLink"
-        class="copy-link"
-      >
-        Copy link
-      </button>
-    </aside>
-    <!-- CONTENT -->
-    <div
-      class="article-body"
-      id="articleBody"
-    >
-      <p>
-        Loading article...
-      </p>
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     KEEP READING
-===================================================== -->
-<section class="article-related">
-  <div class="article-related-inner">
-    <div class="article-related-heading">
-      <p class="eyebrow dark">
-        Keep reading
-      </p>
-      <h2>
-        More things<br>
-        <em>worth talking about.</em>
-      </h2>
-    </div>
-    <div
-      class="article-grid related-grid"
-      id="keepReading"
-    >
-    </div>
-  </div>
-</section>
-<!-- =====================================================
-     JOURNAL CTA
-===================================================== -->
-<section class="article-end">
-  <div class="article-end-inner">
-    <p class="eyebrow">
-      The Journal
-    </p>
-    <h2>
-      There is always<br>
-      <em>something else.</em>
-    </h2>
-    <a
-      href="journal.html"
-      class="button button-orange"
-    >
-      Explore the Journal
-      <span>→</span>
-    </a>
-  </div>
-</section>
-<!-- =====================================================
-     JOIN
-===================================================== -->
-<section class="join-section">
-  <p class="eyebrow">
-    Stay curious
-  </p>
-  <h2>
-    Never miss<br>
-    <em>a good conversation.</em>
-  </h2>
-  <a
-    href="join.html"
-    class="button button-light"
-  >
-    Join the list
-  </a>
-</section>
-</article>
-</main>
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-<footer class="footer">
-  <a
-    class="wordmark"
-    href="index.html"
-  >
-    everything <span>hobbies</span>
-  </a>
-  <p>
-    Everything you love.<br>
-    Worth talking about.
-  </p>
-  <div class="footer-links">
-    <a href="index.html#bookclub">
-      Book Club
-    </a>
-    <a href="journal.html">
-      Journal
-    </a>
-    <a href="index.html#coming-soon">
-      Coming soon
-    </a>
-    <a href="about.html">
-      About
-    </a>
-    <a href="join.html">
-      Join
-    </a>
-  </div>
-</footer>
-<script src="script.js"></script>
+
+      <a class="button" href="journal.html">Explore the Journal</a>
+
+      <a class="secondary-link" href="books.html">
+        Explore the Books section
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-brand">everything hobbies</span>
+    <span>EVERYTHING YOU LOVE. WORTH TALKING ABOUT.</span>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const post = params.get('post');
+
+    const articles = {
+      'next-read': {
+        category: 'Books',
+        title: 'Finding your next favourite read',
+        description: 'Every great reading journey starts somewhere. We’re putting together something to help you discover your next favourite book. Good things take time.'
+      },
+
+      'shared-interests': {
+        category: 'Culture',
+        title: 'Why shared interests bring us together',
+        description: 'The music we love, the stories we share and the things that make us curious can bring people closer. We’re working on this story. Good things take time.'
+      },
+
+      'make-room': {
+        category: 'Lifestyle',
+        title: 'Making room for what you love',
+        description: 'Life gets busy, but there should always be room for the things that make it yours. We’re putting the finishing touches on this story. Good things take time.'
+      }
+    };
+
+    const article = articles[post];
+
+    if (article) {
+      document.title = article.title + ' | everything hobbies';
+
+      document.getElementById('article-category').textContent =
+        article.category;
+
+      document.getElementById('article-title').textContent =
+        article.title;
+
+      document.getElementById('article-description').textContent =
+        article.description;
+    }
+  </script>
 </body>
 </html>
