@@ -4,189 +4,834 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f4ec">
-  <meta name="description" content="Books, culture, lifestyle and everything you love. A place for curious minds, big dreams and everyday inspiration.">
-  <title>everything hobbies. | Everything you love. Worth talking about.</title>
+
+  <meta name="description" content="Everything Hobbies is a home for the things you love, from books and culture to conversations worth having.">
+
+  <title>Everything Hobbies | Everything you love</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f5f0e7;
+      --paper: #faf7f0;
+      --burgundy: #681d24;
+      --deep-burgundy: #481218;
+      --orange: #d77b3f;
+      --green: #53654b;
+      --ink: #171513;
+      --muted: #756e67;
+      --line: #ded5c8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      min-height: 82px;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: -1.2px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--burgundy);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 570px;
+      padding: 100px 8% 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(58px, 10vw, 112px);
+      letter-spacing: -4px;
+      line-height: 0.95;
+      margin-bottom: 27px;
+    }
+
+    .hero h1 span {
+      color: var(--burgundy);
+    }
+
+    .tagline {
+      font-size: clamp(15px, 2vw, 18px);
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 15px;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 31px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--burgundy);
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--orange);
+      padding-bottom: 7px;
+      transition: gap 0.2s ease;
+    }
+
+    .text-link:hover {
+      gap: 18px;
+    }
+
+    .arrow {
+      color: var(--orange);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .intro {
+      padding: 90px 10%;
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .intro-label {
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-top: 9px;
+    }
+
+    .intro h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(35px, 5vw, 52px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 590px;
+      margin-bottom: 17px;
+    }
+
+    .book-club {
+      background: var(--burgundy);
+      color: var(--paper);
+      padding: 85px 9%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-club::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(215, 123, 63, 0.28);
+      border-radius: 50%;
+      top: -120px;
+      right: -50px;
+      pointer-events: none;
+    }
+
+    .book-club::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 1px solid rgba(215, 123, 63, 0.2);
+      border-radius: 50%;
+      bottom: -100px;
+      left: 8%;
+      pointer-events: none;
+    }
+
+    .book-club-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-club .eyebrow {
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .book-club h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(45px, 7vw, 76px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      max-width: 750px;
+      margin-bottom: 22px;
+    }
+
+    .book-club h2 span {
+      color: var(--orange);
+    }
+
+    .book-club-description {
+      color: #eadbd4;
+      font-size: 14px;
+      max-width: 530px;
+      margin-bottom: 30px;
+    }
+
+    .orange-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--orange);
+      color: var(--deep-burgundy);
+      padding: 15px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .orange-link:hover {
+      background: #e69a63;
+    }
+
+    .orange-link span {
+      font-size: 18px;
+    }
+
+    .book-club-note {
+      display: block;
+      color: #d9bdb5;
+      font-size: 10px;
+      margin-top: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    .interests {
+      padding: 85px 9%;
+    }
+
+    .section-heading {
+      max-width: 600px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(38px, 5vw, 54px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .interest-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .interest-item {
+      display: grid;
+      grid-template-columns: 65px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .interest-number {
+      color: var(--orange);
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+    }
+
+    .interest-item h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 27px;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+
+    .interest-item p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .interest-arrow {
+      color: var(--burgundy);
+      font-size: 22px;
+    }
+
+    .journal-feature {
+      padding: 75px 9%;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .journal-feature h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .journal-feature p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      max-width: 480px;
+    }
+
+    .journal-note {
+      border-left: 2px solid var(--orange);
+      padding: 20px 0 20px 25px;
+    }
+
+    .journal-note span {
+      display: block;
+      color: var(--burgundy);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .journal-note p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--ink);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .about-strip {
+      padding: 80px 9%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-strip h2 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(37px, 5vw, 53px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .about-strip p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      max-width: 530px;
+    }
+
+    .about-accent {
+      background: #e8d9c7;
+      padding: 40px;
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .about-accent p {
+      color: var(--deep-burgundy);
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .join-strip {
+      background: var(--green);
+      color: var(--paper);
+      text-align: center;
+      padding: 75px 8%;
+    }
+
+    .join-strip .eyebrow {
+      color: #e9c49f;
+    }
+
+    .join-strip h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(38px, 5vw, 55px);
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .join-strip p {
+      color: #e4e7df;
+      font-size: 14px;
+      max-width: 500px;
+      margin: 0 auto 25px;
+    }
+
+    .join-link {
+      display: inline-block;
+      background: var(--paper);
+      color: var(--green);
+      padding: 13px 23px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .join-link:hover {
+      background: #e9dfd0;
+    }
+
+    .site-footer {
+      padding: 30px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      letter-spacing: -0.7px;
+    }
+
+    .footer-tagline,
+    .copyright {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 20px 6%;
+        flex-wrap: wrap;
+      }
+
+      .wordmark {
+        font-size: 22px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 12px 0 5px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 480px;
+        padding: 80px 7%;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .intro {
+        padding: 60px 7%;
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .book-club {
+        padding: 65px 7%;
+      }
+
+      .book-club h2 {
+        letter-spacing: -1px;
+      }
+
+      .interests {
+        padding: 60px 7%;
+      }
+
+      .interest-item {
+        grid-template-columns: 38px 1fr auto;
+        gap: 12px;
+        padding: 22px 0;
+      }
+
+      .interest-item h3 {
+        font-size: 23px;
+      }
+
+      .journal-feature {
+        padding: 60px 7%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-strip {
+        padding: 60px 7%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-accent {
+        padding: 30px;
+      }
+
+      .join-strip {
+        padding: 60px 7%;
+      }
+
+      .site-footer {
+        padding: 25px 7%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 
-<body class="editorial-home">
+<body>
 
-<header class="site-header solid editorial-header">
-  <a class="wordmark" href="index.html" aria-label="everything hobbies home">everything hobbies<span class="wordmark-period">.</span></a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">everything hobbies</a>
 
-  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
-    <span></span><span></span>
-  </button>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      Menu
+    </button>
 
-  <nav class="nav" id="main-nav" aria-label="Main navigation">
-    <a class="active" href="index.html">Home</a>
-    <a href="books.html">Books</a>
-    <a href="journal.html">Journal</a>
-    <a href="explore.html">Explore</a>
-    <a href="about.html">About</a>
-    <a class="nav-cta" href="join.html">Join us</a>
-  </nav>
-</header>
+    <nav class="nav-links" id="main-navigation">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="books.html">Books</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+      <a href="join.html">Join us</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-  <section class="editorial-hero">
-    <div class="editorial-hero-copy">
-      <p class="eyebrow editorial-eyebrow">Explore <span>·</span> Read <span>·</span> Be inspired</p>
+    <!-- MAIN INTRODUCTION -->
 
-      <h1>Everything<br>you love<span class="orange-period">.</span><br><em>Worth talking<br>about.</em></h1>
+    <section class="hero">
+      <div class="eyebrow">A work in progress</div>
 
-      <p class="editorial-hero-description">
-        Books, culture, lifestyle and more. A place for curious
-        minds, big dreams and everyday inspiration.
+      <h1>everything<br><span>hobbies</span></h1>
+
+      <p class="tagline">
+        Everything you love. Worth talking about.
       </p>
 
-      <a class="editorial-button" href="journal.html">
-        Explore the Journal <span aria-hidden="true">→</span>
+      <p class="hero-description">
+        A home for the things that make us curious, the interests that
+        bring us together and the conversations that stay with us.
+      </p>
+
+      <a class="text-link" href="about.html">
+        Get to know us <span class="arrow">↗</span>
       </a>
-    </div>
+    </section>
 
-    <div class="editorial-hero-photo">
-      <img
-        src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1400&q=85"
-        alt="A warm, sunlit collection of books"
-      >
-      <span class="photo-caption">A little more room for what you love.</span>
-    </div>
-  </section>
+    <!-- GENERAL INTRODUCTION -->
 
-  <section class="editorial-interests" aria-labelledby="interests-heading">
-    <div class="editorial-section-heading">
+    <section class="intro">
+      <div class="intro-label">A place to begin</div>
+
       <div>
-        <p class="eyebrow editorial-eyebrow">Find your thing</p>
-        <h2 id="interests-heading">Explore by interest<span class="orange-period">.</span></h2>
+        <h2>A little corner of the internet for the things you love.</h2>
+
+        <p>
+          Everything Hobbies is a growing community built around our
+          interests, our curiosity and the things we enjoy outside the
+          everyday routine.
+        </p>
+
+        <p>
+          We are starting with books and building from there, creating
+          space for culture, creativity, discovery and conversations
+          worth having.
+        </p>
+
+        <a class="text-link" href="about.html">
+          More about Everything Hobbies
+          <span class="arrow">↗</span>
+        </a>
       </div>
-      <p class="editorial-kicker">Books <span>·</span> Culture <span>·</span> Lifestyle</p>
-    </div>
+    </section>
 
-    <div class="editorial-interest-grid">
+    <!-- BOOK CLUB FEATURE -->
 
-      <a class="editorial-interest-card" href="books.html">
-        <div class="interest-image">
-          <img
-            src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85"
-            alt="An open book ready to be read"
-            loading="lazy"
-          >
-        </div>
-        <div class="interest-card-copy">
-          <p class="card-category">Books</p>
-          <h3>Great stories.<br>Lasting impact.</h3>
-          <p>Thoughtful recommendations, new discoveries and stories worth your time.</p>
-          <span class="card-link">Browse books <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
+    <section class="book-club">
+      <div class="book-club-inner">
+        <div class="eyebrow">Our first chapter</div>
 
-      <a class="editorial-interest-card" href="explore.html#music">
-        <div class="interest-image">
-          <img
-            src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85"
-            alt="Music equipment in a creative studio"
-            loading="lazy"
-          >
-        </div>
-        <div class="interest-card-copy">
-          <p class="card-category">Culture</p>
-          <h3>Fresh perspectives.<br>Bigger conversations.</h3>
-          <p>Music, film, art and ideas that shape how we see the world.</p>
-          <span class="card-link">Explore culture <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
+        <h2>
+          A good book.<br>
+          A great conversation.<br>
+          <span>A community.</span>
+        </h2>
 
-      <a class="editorial-interest-card" href="explore.html#fashion">
-        <div class="interest-image">
-          <img
-            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
-            alt="A thoughtfully styled, sunlit living space"
-            loading="lazy"
-          >
-        </div>
-        <div class="interest-card-copy">
-          <p class="card-category">Lifestyle</p>
-          <h3>A slower pace.<br>A richer life.</h3>
-          <p>Simple pleasures, mindful living and the little things that make everyday feel special.</p>
-          <span class="card-link">Discover lifestyle <span aria-hidden="true">→</span></span>
-        </div>
-      </a>
+        <p class="book-club-description">
+          We are starting with books. Discover the Book Club, follow
+          the reading-list updates and join us as we build a space
+          for readers to connect and share perspectives.
+        </p>
 
-    </div>
-  </section>
+        <a class="orange-link" href="books.html">
+          Enter the Book Club <span>↗</span>
+        </a>
 
-  <section class="editorial-journal-feature">
-    <div class="journal-feature-photo">
-      <img
-        src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1400&q=85"
-        alt="Books, ceramics and greenery in a calm living space"
-        loading="lazy"
-      >
-    </div>
+        <small class="book-club-note">
+          The reading list is being curated. More to come.
+        </small>
+      </div>
+    </section>
 
-    <div class="journal-feature-copy">
-      <p class="eyebrow editorial-eyebrow">The everything hobbies journal</p>
-      <h2>Ideas, recommendations<br>and conversations about<br>everything you love<span class="orange-period">.</span></h2>
+    <!-- OTHER INTERESTS -->
+
+    <section class="interests">
+      <div class="section-heading">
+        <div class="eyebrow">Beyond the first chapter</div>
+
+        <h2>There is more to explore.</h2>
+
+        <p>
+          Books are where we begin, but curiosity does not stop at the
+          last page. This is a space for the interests, ideas and
+          discoveries that make life interesting.
+        </p>
+      </div>
+
+      <div class="interest-list">
+
+        <a class="interest-item" href="explore.html">
+          <div class="interest-number">01</div>
+          <div>
+            <h3>Culture & creativity</h3>
+            <p>Ideas, inspiration and the things shaping our world.</p>
+          </div>
+          <div class="interest-arrow">↗</div>
+        </a>
+
+        <a class="interest-item" href="journal.html">
+          <div class="interest-number">02</div>
+          <div>
+            <h3>Stories & perspectives</h3>
+            <p>Thoughts, reflections and conversations worth sharing.</p>
+          </div>
+          <div class="interest-arrow">↗</div>
+        </a>
+
+        <a class="interest-item" href="explore.html">
+          <div class="interest-number">03</div>
+          <div>
+            <h3>New things to discover</h3>
+            <p>Room to find your next interest and follow your curiosity.</p>
+          </div>
+          <div class="interest-arrow">↗</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- JOURNAL FEATURE -->
+
+    <section class="journal-feature">
+      <div>
+        <div class="eyebrow">From the Journal</div>
+
+        <h2>Some things are better when we talk about them.</h2>
+
+        <p>
+          The Journal is a place for ideas, observations and stories
+          that give us something to think about. Come for a read and
+          leave with a new perspective.
+        </p>
+
+        <a class="text-link" href="journal.html">
+          Explore the Journal <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="journal-note">
+        <span>The Everything Hobbies idea</span>
+        <p>
+          Your interests do not have to be productive to be worth
+          pursuing. Sometimes enjoying something is enough.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT FEATURE -->
+
+    <section class="about-strip">
+      <div>
+        <div class="eyebrow">Why we're here</div>
+
+        <h2>Built around what makes us, us.</h2>
+
+        <p>
+          We believe there should be space for the things we love,
+          the things we are learning and the things we have yet to
+          discover. Everything Hobbies is being built with that idea
+          at its heart.
+        </p>
+
+        <a class="text-link" href="about.html">
+          Read our story <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="about-accent">
+        <p>
+          Not everything needs to be a side hustle. Some things can
+          simply be yours to enjoy.
+        </p>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+
+    <section class="join-strip">
+      <div class="eyebrow">Come as you are</div>
+
+      <h2>There is room for you here.</h2>
+
       <p>
-        From page-turners to weekend plans, find inspiration
-        for your next interest, hobby or conversation starter.
+        Join a growing community of people who enjoy discovering
+        things, sharing ideas and making time for what they love.
       </p>
-      <a class="editorial-button" href="journal.html">
-        Read the Journal <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
 
-  <section class="editorial-bookclub">
-    <div class="bookclub-text">
-      <p class="eyebrow">The book club</p>
-      <h2>One book.<br>Many opinions<span class="orange-period">.</span></h2>
-      <p>
-        We're starting with books: a shortlist, a community
-        vote and a reason to talk about what we're reading.
-      </p>
-      <a class="editorial-button editorial-button-light" href="books.html">
-        Enter the Book Club <span aria-hidden="true">→</span>
-      </a>
-    </div>
+      <a class="join-link" href="join.html">Join the community</a>
+    </section>
 
-    <div class="bookclub-image">
-      <img
-        src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=85"
-        alt="A collection of books arranged on a table"
-        loading="lazy"
-      >
-    </div>
-  </section>
+  </main>
 
-  <section class="editorial-join">
-    <p class="eyebrow">Stay curious</p>
-    <h2>Good things are better<br>when they're shared<span class="orange-period">.</span></h2>
-    <a class="editorial-button editorial-button-light" href="join.html">
-      Join the community <span aria-hidden="true">→</span>
-    </a>
-  </section>
+  <footer class="site-footer">
+    <a class="footer-wordmark" href="index.html">everything hobbies</a>
 
-</main>
+    <p class="footer-tagline">
+      Everything you love. Worth talking about.
+    </p>
 
-<footer class="editorial-footer">
-  <a class="wordmark" href="index.html">everything hobbies<span class="wordmark-period">.</span></a>
-  <p>Everything you love. Worth talking about.</p>
-  <nav aria-label="Footer navigation">
-    <a href="books.html">Books</a>
-    <a href="journal.html">Journal</a>
-    <a href="about.html">About</a>
-    <a href="join.html">Join us</a>
-  </nav>
-</footer>
+    <p class="copyright">
+      © <span id="current-year"></span> Everything Hobbies
+    </p>
+  </footer>
 
-<script src="script.js"></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#main-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelector('#current-year').textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
