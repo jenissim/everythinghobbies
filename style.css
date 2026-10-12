@@ -1,7 +1,9 @@
+
 /* =========================================================
    EVERYTHING HOBBIES
    Main stylesheet
    ========================================================= */
+
 :root {
   --cream: #f5f0e7;
   --paper: #faf7f0;
@@ -18,17 +20,19 @@
   --max-width: 1240px;
   --reading-width: 760px;
 }
-/* =========================================================
-   RESET
-   ========================================================= */
+
+/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background: var(--cream);
   color: var(--ink);
@@ -36,26 +40,30 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+
 img {
   display: block;
   max-width: 100%;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 button,
 input,
 textarea,
 select {
   font: inherit;
 }
+
 button {
   cursor: pointer;
 }
-/* =========================================================
-   HEADER
-   ========================================================= */
+
+/* HEADER */
+
 .site-header {
   width: 100%;
   min-height: 82px;
@@ -66,24 +74,37 @@ button {
   position: relative;
   z-index: 100;
 }
+
 .site-header.solid {
   background: var(--cream);
   border-bottom: 1px solid var(--line);
 }
+
+/* BRAND WORDMARK */
+
 .wordmark {
-  font-family: var(--serif);
-  font-size: 1.55rem;
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 1.45rem;
+  font-weight: 800;
   line-height: 1;
+  letter-spacing: -0.075em;
   white-space: nowrap;
 }
+
 .wordmark span {
-  font-style: italic;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: inherit;
 }
+
 .nav {
   display: flex;
   align-items: center;
   gap: 30px;
 }
+
 .nav a {
   font-size: 0.78rem;
   font-weight: 700;
@@ -91,22 +112,27 @@ button {
   text-transform: uppercase;
   transition: opacity 0.2s ease;
 }
+
 .nav a:hover {
   opacity: 0.55;
 }
+
 .nav a.active {
   color: var(--maroon);
 }
+
 .nav-cta {
   padding: 11px 18px;
   border: 1px solid var(--ink);
   border-radius: 999px;
 }
+
 .nav-cta:hover {
   background: var(--ink);
   color: var(--cream);
   opacity: 1 !important;
 }
+
 .menu-toggle {
   display: none;
   width: 42px;
@@ -115,6 +141,7 @@ button {
   background: transparent;
   position: relative;
 }
+
 .menu-toggle span {
   width: 22px;
   height: 2px;
@@ -123,28 +150,33 @@ button {
   position: absolute;
   left: 10px;
 }
+
 .menu-toggle span:first-child {
   top: 17px;
 }
+
 .menu-toggle span:last-child {
   top: 24px;
 }
-/* =========================================================
-   GENERAL
-   ========================================================= */
+
+/* GENERAL */
+
 .section {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
 }
+
 .eyebrow {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+
 .eyebrow.dark {
   color: var(--maroon);
 }
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -156,9 +188,11 @@ button {
   border-bottom: 1px solid currentColor;
   padding-bottom: 3px;
 }
+
 .text-link:hover {
   opacity: 0.55;
 }
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -172,23 +206,37 @@ button {
   text-transform: uppercase;
   transition: all 0.2s ease;
 }
+
 .button-dark {
   background: var(--ink);
   color: var(--cream);
 }
+
 .button-dark:hover {
   background: var(--maroon);
 }
+
 .button-light {
   background: var(--cream);
   color: var(--ink);
 }
+
 .button-light:hover {
   background: var(--white);
 }
-/* =========================================================
-   HOMEPAGE
-   ========================================================= */
+
+.button-orange {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+.button-orange:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* HOMEPAGE HERO */
+
 .hero {
   min-height: 680px;
   padding: 90px 5vw 80px;
@@ -197,10 +245,12 @@ button {
   background: var(--maroon);
   color: var(--cream);
 }
+
 .hero-content {
   width: min(var(--max-width), 100%);
   margin: 0 auto;
 }
+
 .hero h1 {
   max-width: 920px;
   font-family: var(--serif);
@@ -209,21 +259,28 @@ button {
   line-height: 0.9;
   letter-spacing: -0.045em;
 }
+
 .hero h1 em {
   color: #e7a16e;
   font-style: italic;
 }
+
 .hero p {
   max-width: 520px;
   margin-top: 35px;
   font-size: 1rem;
 }
+
 .hero .button {
   margin-top: 35px;
 }
+
+/* HOMEPAGE BOOK CLUB */
+
 .book-club {
   padding: 110px 0;
 }
+
 .book-club h2,
 .section-heading {
   font-family: var(--serif);
@@ -232,6 +289,7 @@ button {
   line-height: 0.98;
   letter-spacing: -0.035em;
 }
+
 .book-club-grid {
   margin-top: 55px;
   display: grid;
@@ -239,6 +297,7 @@ button {
   gap: 60px;
   align-items: center;
 }
+
 .book-cover {
   min-height: 480px;
   background: var(--green);
@@ -247,29 +306,37 @@ button {
   justify-content: center;
   padding: 50px;
 }
+
 .book-cover img {
   max-height: 400px;
   width: auto;
 }
+
 .book-info p {
   color: var(--muted);
   margin: 20px 0;
 }
+
+/* GENRE SECTION */
+
 .genre-section {
   padding: 100px 5vw;
   background: var(--green);
   color: var(--cream);
 }
+
 .genre-inner {
   width: min(var(--max-width), 100%);
   margin: 0 auto;
 }
+
 .genre-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 35px;
 }
+
 .genre-buttons button {
   padding: 13px 20px;
   border: 1px solid rgba(245, 240, 231, 0.6);
@@ -280,84 +347,107 @@ button {
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .genre-buttons button:hover,
 .genre-buttons button.selected {
   background: var(--cream);
   color: var(--green);
 }
+
 .vote-message {
   min-height: 25px;
   margin-top: 20px;
   font-size: 0.85rem;
 }
+
+/* COMING SOON */
+
 .coming-soon {
   padding: 110px 0;
 }
+
 .coming-soon-grid {
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line);
 }
+
 .coming-soon-card {
   padding: 35px 25px 35px 0;
   border-right: 1px solid var(--line);
 }
+
 .coming-soon-card:not(:first-child) {
   padding-left: 25px;
 }
+
 .coming-soon-card:last-child {
   border-right: 0;
 }
+
 .coming-soon-card h3 {
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 400;
 }
+
 .coming-soon-card p {
   color: var(--muted);
   margin-top: 12px;
 }
-/* =========================================================
-   ABOUT TEASER ON HOMEPAGE
-   ========================================================= */
+
+/* ABOUT TEASER */
+
 .about-section {
   padding: 110px 0;
   background: var(--paper);
 }
+
 .about-content {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
   gap: 80px;
   align-items: start;
 }
+
 .about-content h2 {
-  font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 6rem);
-  line-height: 0.92;
-  font-weight: 400;
+  font-family: var(--sans);
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 0.88;
+  font-weight: 800;
+  letter-spacing: -0.075em;
 }
+
+.about-content h2 em {
+  font-style: normal;
+  font-weight: 800;
+}
+
 .about-content p {
   max-width: 620px;
   color: var(--muted);
   font-size: 1.05rem;
 }
+
 .about-content .text-link {
   margin-top: 25px;
 }
-/* =========================================================
-   JOURNAL TEASER
-   ========================================================= */
+
+/* JOURNAL TEASER */
+
 .journal-teaser {
   padding: 110px 0;
   background: var(--orange);
 }
+
 .journal-teaser-inner {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
 }
+
 .journal-teaser h2 {
   max-width: 760px;
   font-family: var(--serif);
@@ -366,17 +456,19 @@ button {
   line-height: 0.9;
   letter-spacing: -0.04em;
 }
+
 .journal-teaser h2 em {
   font-style: italic;
 }
-/* =========================================================
-   ABOUT PAGE
-   ========================================================= */
+
+/* ABOUT PAGE */
+
 .about-hero {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
   padding: 110px 0 120px;
 }
+
 .about-hero h1 {
   max-width: 950px;
   margin-top: 25px;
@@ -386,13 +478,16 @@ button {
   line-height: 0.88;
   letter-spacing: -0.045em;
 }
+
 .about-hero h1 em {
   color: var(--maroon);
   font-style: italic;
 }
+
 .about-copy {
   padding-bottom: 120px;
 }
+
 .big-statement {
   max-width: 900px;
   font-family: var(--serif);
@@ -400,6 +495,7 @@ button {
   line-height: 0.95;
   letter-spacing: -0.035em;
 }
+
 .two-col {
   margin-top: 65px;
   display: grid;
@@ -408,16 +504,19 @@ button {
   border-top: 1px solid var(--line);
   padding-top: 35px;
 }
+
 .two-col p {
   max-width: 500px;
   color: var(--muted);
 }
+
 .two-col p:last-child {
   color: var(--ink);
   font-family: var(--serif);
   font-size: 2.4rem;
   line-height: 1;
 }
+
 .manifesto {
   padding: 110px 5vw;
   background: var(--maroon);
@@ -427,6 +526,7 @@ button {
   gap: 80px;
   align-items: end;
 }
+
 .manifesto h2 {
   margin-top: 25px;
   font-family: var(--serif);
@@ -434,17 +534,21 @@ button {
   line-height: 0.9;
   font-weight: 400;
 }
+
 .manifesto > p {
   max-width: 520px;
   font-size: 1.1rem;
 }
+
 .about-interests {
   padding: 110px 0;
 }
+
 .interests-list {
   margin-top: 55px;
   border-top: 1px solid var(--line);
 }
+
 .interest-row {
   padding: 25px 0;
   border-bottom: 1px solid var(--line);
@@ -452,11 +556,13 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+
 .interest-row h3 {
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
 }
+
 .interest-row span {
   color: var(--muted);
   font-size: 0.75rem;
@@ -464,10 +570,12 @@ button {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
 .about-end {
   padding: 100px 0 130px;
   text-align: center;
 }
+
 .about-end h2 {
   font-family: var(--serif);
   font-size: clamp(3.5rem, 7vw, 7rem);
@@ -475,30 +583,35 @@ button {
   font-weight: 400;
   letter-spacing: -0.04em;
 }
+
 .about-end h2 em {
   color: var(--maroon);
 }
+
 .about-end .button {
   margin-top: 40px;
 }
-/* =========================================================
-   JOURNAL PAGE
-   ========================================================= */
+
+/* JOURNAL PAGE */
+
 .journal-page-hero {
   padding: 105px 5vw 90px;
   background: var(--maroon);
   color: var(--cream);
 }
+
 .journal-page-hero-inner {
   width: min(var(--max-width), 100%);
   margin: 0 auto;
 }
+
 .journal-page-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
+
 .journal-page-hero h1 {
   max-width: 950px;
   margin-top: 35px;
@@ -508,20 +621,24 @@ button {
   line-height: 0.87;
   letter-spacing: -0.05em;
 }
+
 .journal-page-hero h1 em {
   color: #e7a16e;
   font-style: italic;
 }
+
 .journal-page-hero .hero-intro {
   max-width: 570px;
   margin-top: 35px;
   font-size: 1rem;
 }
+
 .journal-filters {
   padding: 30px 5vw;
   border-bottom: 1px solid var(--line);
   overflow-x: auto;
 }
+
 .journal-filters-inner {
   width: min(var(--max-width), 100%);
   margin: 0 auto;
@@ -529,6 +646,7 @@ button {
   gap: 10px;
   white-space: nowrap;
 }
+
 .journal-filters button {
   padding: 10px 17px;
   border: 1px solid var(--line);
@@ -540,30 +658,36 @@ button {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
 .journal-filters button:hover,
 .journal-filters button.active {
   background: var(--ink);
   color: var(--cream);
   border-color: var(--ink);
 }
+
 .journal-featured {
   padding: 100px 0;
 }
+
 .featured-article {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   min-height: 560px;
 }
+
 .featured-article-image {
   min-height: 500px;
   background: var(--green);
   overflow: hidden;
 }
+
 .featured-article-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .featured-article-copy {
   padding: 60px;
   background: var(--paper);
@@ -571,6 +695,7 @@ button {
   flex-direction: column;
   justify-content: center;
 }
+
 .featured-article-copy h2 {
   margin-top: 18px;
   font-family: var(--serif);
@@ -579,10 +704,12 @@ button {
   line-height: 0.92;
   letter-spacing: -0.035em;
 }
+
 .featured-article-copy p {
   margin-top: 25px;
   color: var(--muted);
 }
+
 .article-meta {
   margin-top: 25px;
   display: flex;
@@ -594,13 +721,16 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+
 .featured-article-copy .button {
   align-self: flex-start;
   margin-top: 30px;
 }
+
 .journal-latest {
   padding: 20px 0 110px;
 }
+
 .journal-latest-heading {
   display: flex;
   align-items: end;
@@ -608,32 +738,39 @@ button {
   gap: 30px;
   margin-bottom: 45px;
 }
+
 .article-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 55px 35px;
 }
+
 .article-card {
   border-top: 1px solid var(--line);
   padding-top: 20px;
 }
+
 .article-card-image {
   aspect-ratio: 16 / 10;
   background: var(--green);
   overflow: hidden;
 }
+
 .article-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
+
 .article-card:hover .article-card-image img {
   transform: scale(1.03);
 }
+
 .article-card-copy {
   padding-top: 22px;
 }
+
 .article-card h3 {
   margin-top: 10px;
   font-family: var(--serif);
@@ -641,20 +778,24 @@ button {
   line-height: 0.95;
   font-weight: 400;
 }
+
 .article-card p {
   max-width: 580px;
   margin-top: 15px;
   color: var(--muted);
 }
+
 .article-card .article-meta {
   margin-top: 17px;
 }
+
 .journal-statement {
   padding: 120px 5vw;
   background: var(--green);
   color: var(--cream);
   text-align: center;
 }
+
 .journal-statement p {
   max-width: 1050px;
   margin: 0 auto;
@@ -663,43 +804,53 @@ button {
   line-height: 0.9;
   letter-spacing: -0.04em;
 }
+
 .journal-statement em {
   color: #e7a16e;
 }
+
 .journal-topics {
   padding: 110px 0;
 }
+
 .topics-grid {
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--line);
 }
+
 .topic-card {
   padding: 30px 25px 30px 0;
   border-right: 1px solid var(--line);
 }
+
 .topic-card:not(:first-child) {
   padding-left: 25px;
 }
+
 .topic-card:last-child {
   border-right: 0;
 }
+
 .topic-card h3 {
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 400;
 }
+
 .topic-card p {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.9rem;
 }
+
 .journal-join {
   padding: 100px 5vw;
   background: var(--orange);
   text-align: center;
 }
+
 .journal-join h2 {
   max-width: 800px;
   margin: 0 auto;
@@ -708,21 +859,24 @@ button {
   line-height: 0.9;
   font-weight: 400;
 }
+
 .journal-join .button {
   margin-top: 35px;
 }
-/* =========================================================
-   ARTICLE PAGE
-   ========================================================= */
+
+/* ARTICLE PAGE */
+
 .article-page {
   padding-bottom: 100px;
 }
+
 .article-header {
   width: min(900px, 90%);
   margin: 0 auto;
   padding: 90px 0 65px;
   text-align: center;
 }
+
 .back-link {
   display: inline-block;
   margin-bottom: 40px;
@@ -731,6 +885,7 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
 .article-header h1 {
   margin-top: 20px;
   font-family: var(--serif);
@@ -739,15 +894,18 @@ button {
   line-height: 0.88;
   letter-spacing: -0.045em;
 }
+
 .article-excerpt {
   max-width: 680px;
   margin: 30px auto 0;
   color: var(--muted);
   font-size: 1.05rem;
 }
+
 .article-header .article-meta {
   justify-content: center;
 }
+
 .article-feature-image {
   width: min(1100px, 90%);
   aspect-ratio: 16 / 9;
@@ -755,11 +913,13 @@ button {
   background: var(--green);
   overflow: hidden;
 }
+
 .article-feature-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .article-reading-layout {
   width: min(1100px, 90%);
   margin: 75px auto 0;
@@ -768,15 +928,18 @@ button {
   justify-content: center;
   gap: 60px;
 }
+
 .article-share {
   padding-top: 5px;
 }
+
 .article-share p {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
 .article-share button {
   margin-top: 13px;
   padding: 10px 14px;
@@ -786,16 +949,20 @@ button {
   font-weight: 800;
   text-transform: uppercase;
 }
+
 .article-share button:hover {
   background: var(--ink);
   color: var(--cream);
 }
+
 .article-body {
   font-size: 1.08rem;
 }
+
 .article-body p {
   margin-bottom: 28px;
 }
+
 .article-body h2 {
   margin: 60px 0 25px;
   font-family: var(--serif);
@@ -803,12 +970,14 @@ button {
   line-height: 1;
   font-weight: 400;
 }
+
 .article-body h3 {
   margin: 45px 0 18px;
   font-family: var(--serif);
   font-size: 2rem;
   font-weight: 400;
 }
+
 .article-body blockquote {
   margin: 50px 0;
   padding: 30px 0 30px 30px;
@@ -817,23 +986,26 @@ button {
   font-size: 2.2rem;
   line-height: 1.1;
 }
+
 .keep-reading {
   width: min(var(--max-width), 90%);
   margin: 110px auto 0;
   padding-top: 60px;
   border-top: 1px solid var(--line);
 }
+
 .keep-reading h2 {
   font-family: var(--serif);
   font-size: 3.5rem;
   font-weight: 400;
 }
+
 .keep-reading .article-grid {
   margin-top: 40px;
 }
-/* =========================================================
-   ARTICLE CTA
-   ========================================================= */
+
+/* ARTICLE CTA */
+
 .article-cta {
   width: min(1100px, 90%);
   margin: 100px auto 0;
@@ -842,23 +1014,26 @@ button {
   color: var(--cream);
   text-align: center;
 }
+
 .article-cta h2 {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 5vw, 5rem);
   line-height: 0.9;
   font-weight: 400;
 }
+
 .article-cta p {
   max-width: 550px;
   margin: 20px auto 0;
   opacity: 0.8;
 }
+
 .article-cta .button {
   margin-top: 30px;
 }
-/* =========================================================
-   FOOTER
-   ========================================================= */
+
+/* FOOTER */
+
 .footer {
   padding: 45px 5vw;
   display: grid;
@@ -867,34 +1042,46 @@ button {
   gap: 30px;
   border-top: 1px solid var(--line);
 }
+
 .footer > p {
   text-align: center;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
 }
+
 .footer > div {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
 }
+
 .footer > div a {
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-/* =========================================================
-   MOBILE
-   ========================================================= */
+
+/* MOBILE */
+
 @media (max-width: 850px) {
   .site-header {
     min-height: 72px;
     padding: 0 5%;
   }
+
+  .wordmark {
+    font-size: 1.35rem;
+  }
+
   .menu-toggle {
     display: block;
     z-index: 110;
   }
+
   .nav {
     display: none;
     position: absolute;
@@ -908,16 +1095,20 @@ button {
     align-items: flex-start;
     gap: 20px;
   }
+
   .nav.open {
     display: flex;
   }
+
   .hero {
     min-height: 580px;
     padding: 75px 5% 70px;
   }
+
   .hero h1 {
     font-size: clamp(3.7rem, 17vw, 6rem);
   }
+
   .book-club,
   .coming-soon,
   .about-section,
@@ -927,182 +1118,238 @@ button {
   .journal-topics {
     padding: 75px 0;
   }
+
   .book-club-grid {
     grid-template-columns: 1fr;
     gap: 35px;
   }
+
   .book-cover {
     min-height: 390px;
   }
+
   .coming-soon-grid {
     grid-template-columns: 1fr;
   }
+
   .coming-soon-card,
   .coming-soon-card:not(:first-child) {
     padding: 25px 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
+
   .coming-soon-card:last-child {
     border-bottom: 0;
   }
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 35px;
   }
+
+  .about-content h2 {
+    font-size: clamp(2.7rem, 10vw, 4.2rem);
+    line-height: 0.9;
+  }
+
   .journal-teaser-inner {
     display: block;
   }
+
   .journal-teaser .button {
     margin-top: 35px;
   }
+
   .about-hero {
     padding: 75px 0 80px;
   }
+
   .about-hero h1 {
     font-size: clamp(3.7rem, 16vw, 6rem);
   }
+
   .two-col {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
   .manifesto {
     grid-template-columns: 1fr;
     gap: 45px;
     padding: 75px 5%;
   }
+
   .interest-row {
     gap: 20px;
   }
+
   .interest-row h3 {
     font-size: 2rem;
   }
+
   .topics-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .topic-card {
     border-bottom: 1px solid var(--line);
   }
+
   .topic-card:nth-child(2) {
     border-right: 0;
   }
+
   .topic-card:nth-child(3),
   .topic-card:nth-child(4) {
     border-bottom: 0;
   }
+
   .featured-article {
     grid-template-columns: 1fr;
   }
+
   .featured-article-image {
     min-height: 350px;
   }
+
   .featured-article-copy {
     padding: 40px 30px;
   }
+
   .article-grid {
     grid-template-columns: 1fr;
   }
+
   .journal-page-hero {
     padding: 75px 5% 70px;
   }
+
   .journal-page-hero h1 {
     font-size: clamp(3.8rem, 16vw, 6.5rem);
   }
+
   .journal-page-meta {
     align-items: flex-start;
   }
+
   .journal-statement {
     padding: 80px 5%;
   }
+
   .article-header {
     padding: 65px 0 45px;
   }
+
   .article-header h1 {
     font-size: clamp(3.4rem, 13vw, 5.5rem);
   }
+
   .article-reading-layout {
     display: block;
     margin-top: 50px;
   }
+
   .article-share {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
+
   .article-share button {
     margin-top: 0;
   }
+
   .article-body {
     font-size: 1rem;
   }
+
   .article-body blockquote {
     font-size: 1.8rem;
     padding-left: 20px;
   }
+
   .article-cta {
     padding: 50px 25px;
     margin-top: 75px;
   }
+
   .footer {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 40px 5%;
   }
+
   .footer .wordmark {
     justify-self: center;
   }
+
   .footer > p {
     text-align: center;
   }
+
   .footer > div {
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
+
+/* SMALL PHONES */
+
 @media (max-width: 480px) {
   .wordmark {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
+
   .hero {
     min-height: 520px;
   }
+
   .hero h1 {
     font-size: 3.7rem;
   }
+
   .book-cover {
     min-height: 300px;
     padding: 30px;
   }
+
   .journal-page-meta {
     display: block;
   }
+
   .journal-page-meta .eyebrow:last-child {
     margin-top: 12px;
   }
+
   .featured-article-image {
     min-height: 270px;
   }
+
   .featured-article-copy {
     padding: 32px 22px;
   }
+
   .article-card h3 {
     font-size: 2.2rem;
   }
+
   .topics-grid {
     grid-template-columns: 1fr;
   }
+
   .topic-card,
   .topic-card:not(:first-child) {
     padding: 25px 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
+
   .topic-card:last-child {
     border-bottom: 0;
   }
+
   .article-feature-image {
     width: 90%;
     aspect-ratio: 4 / 3;
