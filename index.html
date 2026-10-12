@@ -144,11 +144,41 @@
     .text-link:hover {
       gap: 18px;
     }
-    .arrow {
-      color: var(--orange);
-      font-size: 18px;
-      line-height: 1;
-    }
+    
+.arrow {
+  display: inline-block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  font-size: 0;
+  color: var(--orange);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: 1px;
+  right: 1px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 1.5px;
+  left: 0;
+  bottom: 2px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+    
     /* INTRODUCTION */
     .intro {
       padding: 90px 10%;
